@@ -1,0 +1,878 @@
+import fs from 'fs';
+import path from 'path';
+import bcrypt from 'bcryptjs';
+import { 
+  User, 
+  SpiceProduct, 
+  Order, 
+  Review, 
+  Coupon, 
+  AuditLog, 
+  StoreSettings 
+} from '@/types';
+
+interface DatabaseSchema {
+  users: User[];
+  products: SpiceProduct[];
+  orders: Order[];
+  reviews: Review[];
+  coupons: Coupon[];
+  auditLogs: AuditLog[];
+  settings: StoreSettings;
+}
+
+const DATA_DIR = path.join(process.cwd(), 'data');
+const DB_FILE = path.join(DATA_DIR, 'store.json');
+
+// Initial seed store settings
+const initialSettings: StoreSettings = {
+  storeName: 'Zaffran & Clove',
+  tagline: 'Artisanal Single-Origin Spices & Handcrafted Heritage Blends',
+  currency: 'USD',
+  currencySymbol: '$',
+  taxRate: 5,
+  freeShippingThreshold: 50,
+  standardShippingFee: 4.99,
+  expressShippingFee: 12.99,
+  supportEmail: 'concierge@zaffranandclove.com',
+  supportPhone: '+1 (800) 555-SPICE',
+  announcement: '🌿 Spring Harvest Has Landed: Enjoy 15% off with code SPICE15 | Free Express Aroma-Lock shipping over $50!',
+  showAnnouncement: true,
+  maintenanceMode: false,
+};
+
+// Seed Products
+const initialProducts: SpiceProduct[] = [
+  {
+    id: 'prod-1',
+    name: 'Royal Kashmiri Mongra Saffron',
+    slug: 'royal-kashmiri-mongra-saffron',
+    category: 'Saffron & Luxury Botanicals',
+    tagline: 'Grade A++ Purest Crocus Sativus Stigmas from Pampore Plateau',
+    description: 'Harvested entirely by hand during the crisp dawn frost of Kashmir, our Mongra grade saffron features intensely deep crimson threads with zero floral yellow waste. Imparts an ethereal golden liquor, profound bittersweet floral aroma, and unmatched culinary fragrance.',
+    origin: 'Pampore Plateau, Kashmir',
+    originCountry: 'India',
+    heatLevel: 0,
+    heatDescription: 'None (Sweet, Floral, Honeyed warmth)',
+    aromaNotes: ['Floral Honey', 'Warm Hay', 'Earthy Amber', 'Woody Velvet'],
+    culinaryUses: ['Kashmiri Biryani', 'Saffron Milk / Kahwa', 'Persian Jeweled Rice', 'Spanish Paella', 'Fine Patisserie'],
+    harvestYear: '2024 Fresh Autumn Harvest',
+    organic: true,
+    singleOrigin: true,
+    isFeatured: true,
+    isBestseller: true,
+    rating: 4.95,
+    reviewCount: 128,
+    stock: 45,
+    variants: [
+      { weight: '1g', price: 18.00, stock: 45 },
+      { weight: '2g', price: 34.00, originalPrice: 36.00, stock: 30 },
+      { weight: '5g', price: 78.00, originalPrice: 90.00, stock: 20 },
+      { weight: '10g', price: 145.00, originalPrice: 180.00, stock: 12 },
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80',
+    ],
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'prod-2',
+    name: 'Tellicherry Garbled Extra Bold Black Peppercorns (TGSEB)',
+    slug: 'tellicherry-garbled-extra-bold-black-peppercorns',
+    category: 'Whole Spices',
+    tagline: 'Sun-Ripened Jumbo Berries with Intense Citrus & Cedar Finish',
+    description: 'The indisputable king of black peppers. Grown on the misty hillsides of the Malabar Coast, only the largest, fully matured 4.75mm berries earn the TGSEB classification. Unlocks a rich complexity of bright citrus oils, warm cedarwood, and deep biting heat.',
+    origin: 'Wayanad, Malabar Coast',
+    originCountry: 'India',
+    heatLevel: 2,
+    heatDescription: 'Medium Heat (Pungent, Piperine-rich bite)',
+    aromaNotes: ['Zesty Citrus', 'Cedarwood', 'Dark Plum', 'Cracked Pine'],
+    culinaryUses: ['Steak au Poivre', 'Cacio e Pepe', 'Slow-Braised Broths', 'Charcuterie Seasoning'],
+    harvestYear: '2024 Winter Harvest',
+    organic: true,
+    singleOrigin: true,
+    isFeatured: true,
+    isBestseller: true,
+    rating: 4.9,
+    reviewCount: 94,
+    stock: 120,
+    variants: [
+      { weight: '100g', price: 12.50, stock: 120 },
+      { weight: '250g', price: 26.00, originalPrice: 31.00, stock: 85 },
+      { weight: '500g', price: 48.00, originalPrice: 62.00, stock: 40 },
+      { weight: '1kg', price: 88.00, originalPrice: 125.00, stock: 15 },
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=80',
+    ],
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'prod-3',
+    name: 'Ceylon Alba Grade True Cinnamon Quills',
+    slug: 'ceylon-alba-grade-true-cinnamon-quills',
+    category: 'Whole Spices',
+    tagline: 'Ultra-Slender Hand-Rolled Layers of Sweet Delicate Bark',
+    description: 'Unlike rough, high-coumarin cassia, true Ceylon Cinnamon Alba grade is composed of pencil-thin, fragile paper-like layers hand-rolled by master peelers. Imparts delicate floral sweetness, refined warmth, and subtle citrus notes without bitterness.',
+    origin: 'Southern Province',
+    originCountry: 'Sri Lanka',
+    heatLevel: 0,
+    heatDescription: 'None (Sweet, Gentle, Warm spice)',
+    aromaNotes: ['Floral Sweetness', 'Clove Undertones', 'Citrus Blossom', 'Warm Bark'],
+    culinaryUses: ['Mexican Hot Chocolate', 'Spiced Cider', 'Biryani Pulao', 'Cinnamon Rolls', 'Curry Infusion'],
+    harvestYear: '2024 Monsoon Harvest',
+    organic: true,
+    singleOrigin: true,
+    isFeatured: true,
+    isBestseller: false,
+    rating: 4.88,
+    reviewCount: 67,
+    stock: 65,
+    variants: [
+      { weight: '50g', price: 14.00, stock: 65 },
+      { weight: '100g', price: 24.00, originalPrice: 28.00, stock: 45 },
+      { weight: '250g', price: 54.00, originalPrice: 70.00, stock: 25 },
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80',
+    ],
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'prod-4',
+    name: 'Alleppey Super Bold Green Cardamom (8mm+)',
+    slug: 'alleppey-super-bold-green-cardamom',
+    category: 'Whole Spices',
+    tagline: 'High Essential-Oil Plump Pods with Camphoric Eucalyptus Elegance',
+    description: 'Cardamom pods of supreme 8mm+ caliber shade-cured to lock in their emerald-green hue and explosive volatile essential oils. Crisp pod walls crack open to reveal glistening obsidian seeds with menthol, camphor, and floral citrus punch.',
+    origin: 'Idukki Hills, Kerala',
+    originCountry: 'India',
+    heatLevel: 1,
+    heatDescription: 'Mild (Cool camphoric tingling warmth)',
+    aromaNotes: ['Eucalyptus', 'Sweet Menthol', 'Pine Needles', 'Orange Peel'],
+    culinaryUses: ['Masala Chai', 'Cardamom Buns (Kardemummabullar)', 'Pilafs', 'Mughlai Kormas', 'Nordic Baking'],
+    harvestYear: '2024 Fresh Crop',
+    organic: true,
+    singleOrigin: true,
+    isFeatured: true,
+    isBestseller: true,
+    rating: 4.92,
+    reviewCount: 83,
+    stock: 75,
+    variants: [
+      { weight: '50g', price: 16.00, stock: 75 },
+      { weight: '100g', price: 29.00, originalPrice: 32.00, stock: 50 },
+      { weight: '250g', price: 68.00, originalPrice: 80.00, stock: 25 },
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80',
+    ],
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'prod-5',
+    name: 'Vibrant Kashmiri Mirch Whole Pods & Powder',
+    slug: 'vibrant-kashmiri-mirch',
+    category: 'Ground Spices',
+    tagline: 'Deep Ruby Luster with Silky Gentle Warmth & Smoky Sweetness',
+    description: 'Renowned throughout world gastronomy for imparting a legendary deep crimson luster to gravies without scorchingly high Scoville heat. Our Kashmiri chillies are sun-dried and slow stone-ground to preserve the natural capsaicin and essential carotenoids.',
+    origin: 'Kashmir Valley',
+    originCountry: 'India',
+    heatLevel: 1,
+    heatDescription: 'Gentle Mild Warmth (1,000 - 2,000 SHU)',
+    aromaNotes: ['Sun-dried Tomato', 'Smoky Raisin', 'Sweet Paprika', 'Leather'],
+    culinaryUses: ['Rogan Josh', 'Butter Chicken / Paneer Makhani', 'Tandoori Marinades', 'Chili Oil'],
+    harvestYear: '2024 Autumn Harvest',
+    organic: true,
+    singleOrigin: true,
+    isFeatured: false,
+    isBestseller: true,
+    rating: 4.87,
+    reviewCount: 110,
+    stock: 140,
+    variants: [
+      { weight: '100g Powder', price: 9.50, stock: 140 },
+      { weight: '250g Powder', price: 19.00, originalPrice: 23.00, stock: 90 },
+      { weight: '100g Whole Pods', price: 11.00, stock: 60 },
+      { weight: '500g Powder', price: 34.00, originalPrice: 47.00, stock: 35 },
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80',
+    ],
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'prod-6',
+    name: '17-Spice Heirloom Royal Garam Masala',
+    slug: '17-spice-heirloom-royal-garam-masala',
+    category: 'Blends & Masalas',
+    tagline: 'Slow-Roasted Whole Botanicals Stone-Milled in Small Batches',
+    description: 'An aristocratic secret formula combining black cumin, mace blades, green & black cardamoms, star anise, nutmeg, stone flower (dagad phool), and rose petals. Gentle gentle dry-roasting awakens aromatic oils before low-temperature granite milling.',
+    origin: 'Old Delhi Heritage Recipe',
+    originCountry: 'India',
+    heatLevel: 2,
+    heatDescription: 'Warm & Fragrant (Medium Complexity)',
+    aromaNotes: ['Nutmeg & Mace', 'Rose Petals', 'Toasted Coriander', 'Smoked Clove'],
+    culinaryUses: ['Finishing Dash on Curries', 'Lentil Dals', 'Roasted Vegetables', 'Lamb Tagines'],
+    harvestYear: '2024 Freshly Blended Batch',
+    organic: true,
+    singleOrigin: false,
+    isFeatured: true,
+    isBestseller: true,
+    rating: 4.96,
+    reviewCount: 154,
+    stock: 95,
+    variants: [
+      { weight: '100g Jar', price: 13.50, stock: 95 },
+      { weight: '250g Pouch', price: 28.00, originalPrice: 34.00, stock: 60 },
+      { weight: '500g Pouch', price: 50.00, originalPrice: 68.00, stock: 30 },
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=80',
+    ],
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'prod-7',
+    name: 'Golden Lakadong Turmeric (7.5%+ Curcumin)',
+    slug: 'golden-lakadong-turmeric',
+    category: 'Ground Spices',
+    tagline: 'High-Potency Therapeutic Gold from the Jaintia Hills of Meghalaya',
+    description: 'While commercial turmeric contains a mere 2-3% curcumin, our wild-grown Lakadong variety delivers an astounding 7.5% to 8.2% natural active curcumin. Possesses an intoxicating earthy scent, vibrant luminous saffron glow, and potent antioxidant qualities.',
+    origin: 'Jaintia Hills, Meghalaya',
+    originCountry: 'India',
+    heatLevel: 0,
+    heatDescription: 'None (Earthy, Warm, Pungent)',
+    aromaNotes: ['Fresh Earth', 'Warm Ginger', 'Peppery Undertone', 'Golden Meadow'],
+    culinaryUses: ['Ayurvedic Golden Milk', 'Slow Curries', 'Turmeric Lattes', 'Morning Elixirs', 'Rice Dyeing'],
+    harvestYear: '2024 Hill Harvest',
+    organic: true,
+    singleOrigin: true,
+    isFeatured: false,
+    isBestseller: true,
+    rating: 4.91,
+    reviewCount: 88,
+    stock: 110,
+    variants: [
+      { weight: '100g', price: 11.00, stock: 110 },
+      { weight: '250g', price: 23.00, originalPrice: 27.50, stock: 75 },
+      { weight: '500g', price: 42.00, originalPrice: 55.00, stock: 40 },
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80',
+    ],
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'prod-8',
+    name: 'Smoked Pimentón de la Vera (D.O.P Dulce)',
+    slug: 'smoked-pimenton-de-la-vera',
+    category: 'Ground Spices',
+    tagline: 'Oak-Wood Smoked Paprika with Protected Spanish Denomination of Origin',
+    description: 'Slowly smoked over smoldering Holm oak wood fires for 15 days in Extremadura, Spain, then stone ground on monumental millstones. Delivers a profound, savory woodsmoke perfume that elevates meats, stews, roasted potatoes, and hummus.',
+    origin: 'La Vera, Extremadura',
+    originCountry: 'Spain',
+    heatLevel: 1,
+    heatDescription: 'Mildly Warm (Deep Oak Smoke)',
+    aromaNotes: ['Holm Oak Woodsmoke', 'Caramelized Pepper', 'Sweet Ash', 'Earthy Red Berry'],
+    culinaryUses: ['Spanish Paella', 'Patatas Bravas', 'Dry Meat Rubs', 'Romesco Sauce', 'Shakshuka'],
+    harvestYear: '2024 D.O.P Certified',
+    organic: true,
+    singleOrigin: true,
+    isFeatured: true,
+    isBestseller: false,
+    rating: 4.89,
+    reviewCount: 47,
+    stock: 80,
+    variants: [
+      { weight: '75g Tin', price: 10.50, stock: 80 },
+      { weight: '150g Tin', price: 18.50, originalPrice: 21.00, stock: 55 },
+      { weight: '500g Bag', price: 38.00, originalPrice: 52.00, stock: 25 },
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=80',
+    ],
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'prod-9',
+    name: 'Madagascar Bourbon Gourmet Vanilla Beans (Grade A)',
+    slug: 'madagascar-bourbon-gourmet-vanilla-beans',
+    category: 'Saffron & Luxury Botanicals',
+    tagline: 'Supple 18cm Plump Pods Overflowing with Caviar Seeds',
+    description: 'Sun-cured and traditionally conditioned in the Sava region of Madagascar. These prime Grade-A black pods boast a luxurious 33%+ moisture content, making them soft, oily, and pliable, packed with millions of aromatic vanillin caviar seeds.',
+    origin: 'Sava Region',
+    originCountry: 'Madagascar',
+    heatLevel: 0,
+    heatDescription: 'None (Decadent, Sweet, Creamy balsam)',
+    aromaNotes: ['Creamy Vanillin', 'Dark Marshmallow', 'Bourbon Oak', 'Fig'],
+    culinaryUses: ['Crème Brûlée', 'Homemade Ice Cream', 'Pastry Creams', 'Artisan Extracts', 'Infused Sugar'],
+    harvestYear: '2024 Sun Cured',
+    organic: true,
+    singleOrigin: true,
+    isFeatured: true,
+    isBestseller: true,
+    rating: 4.97,
+    reviewCount: 76,
+    stock: 50,
+    variants: [
+      { weight: '3 Pods (approx 12g)', price: 19.50, stock: 50 },
+      { weight: '5 Pods (approx 20g)', price: 31.00, originalPrice: 35.00, stock: 35 },
+      { weight: '10 Pods (approx 40g)', price: 58.00, originalPrice: 70.00, stock: 20 },
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80',
+    ],
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'prod-10',
+    name: 'Royal Za\'atar Artisan Levantine Blend',
+    slug: 'royal-zaatar-artisan-levantine-blend',
+    category: 'Herbs & Seasonings',
+    tagline: 'Wild Mount Lebanon Hyssop Thyme, Tangy Crimson Sumac & Nutty Sesame',
+    description: 'An ancient breakfast staple and culinary marvel. Wild mountain thyme (hyssop) hand-picked on rocky Mediterranean slopes, tossed with tart sun-dried sumac berries, toasted golden sesame seeds, and sea salt flakes.',
+    origin: 'Mount Lebanon',
+    originCountry: 'Lebanon',
+    heatLevel: 0,
+    heatDescription: 'None (Tangy, Herbal, Nutty)',
+    aromaNotes: ['Wild Thyme Herbaceous', 'Tart Citrus Berry', 'Toasted Sesame Nutty', 'Sea Breeze'],
+    culinaryUses: ['Olive Oil Dip with Warm Pita', 'Roasted Chicken', 'Labneh & Feta Drizzle', 'Flatbread Topping'],
+    harvestYear: '2024 Mountain Harvest',
+    organic: true,
+    singleOrigin: false,
+    isFeatured: false,
+    isBestseller: true,
+    rating: 4.86,
+    reviewCount: 52,
+    stock: 90,
+    variants: [
+      { weight: '100g Jar', price: 11.50, stock: 90 },
+      { weight: '250g Pouch', price: 23.00, originalPrice: 28.00, stock: 65 },
+      { weight: '500g Bag', price: 42.00, originalPrice: 56.00, stock: 30 },
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=800&q=80',
+    ],
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'prod-11',
+    name: 'Wild Mountain Cumin Seeds (Royal Jeera)',
+    slug: 'wild-mountain-cumin-seeds',
+    category: 'Whole Spices',
+    tagline: 'High-Eugenol Slender Grey Seeds with Earthy, Piney Resonance',
+    description: 'Harvested from drought-resistant heritage shrubs in the arid mineral soils of Nagaur, Rajasthan. Smaller and more intensely ribbed than standard commercial cumin, providing a clean, crackling snap when bloomed in hot ghee.',
+    origin: 'Nagaur, Rajasthan',
+    originCountry: 'India',
+    heatLevel: 1,
+    heatDescription: 'Mild Warmth (Toasty, Piney snap)',
+    aromaNotes: ['Toasted Pine', 'Warm Clay', 'Peppery Smoke', 'Zesty Grass'],
+    culinaryUses: ['Tarka Tempered Lentils', 'Mexican Chili Con Carne', 'Jeera Rice', 'Falafel Seasoning'],
+    harvestYear: '2024 Desert Harvest',
+    organic: true,
+    singleOrigin: true,
+    isFeatured: false,
+    isBestseller: false,
+    rating: 4.84,
+    reviewCount: 39,
+    stock: 130,
+    variants: [
+      { weight: '100g', price: 7.50, stock: 130 },
+      { weight: '250g', price: 15.00, originalPrice: 18.75, stock: 90 },
+      { weight: '500g', price: 26.00, originalPrice: 37.50, stock: 45 },
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80',
+    ],
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'prod-12',
+    name: 'Guntur Sannam Sun-Dried Red Chillies (Fiery S4)',
+    slug: 'guntur-sannam-sun-dried-red-chillies',
+    category: 'Whole Spices',
+    tagline: 'The Legendary Fiery Crimson Pride of Andhra Pradesh',
+    description: 'For lovers of authentic tingling culinary fire. Sun-dried under the intense Deccan sun, Guntur Sannam chillies possess a radiant scarlet skin and deliver an assertive, lingering heat (35,000 to 45,000 Scoville units) accompanied by deep savory fruitiness.',
+    origin: 'Guntur, Andhra Pradesh',
+    originCountry: 'India',
+    heatLevel: 4,
+    heatDescription: 'Fiery Hot (35,000 - 45,000 SHU)',
+    aromaNotes: ['Sun-Baked Clay', 'Dried Cherry', 'Pungent Smoke', 'Intense Capsaicin'],
+    culinaryUses: ['Andhra Spicy Chicken', 'Szechuan Chili Crisps', 'Vindaloo Curry', 'Pickling'],
+    harvestYear: '2024 Fresh Harvest',
+    organic: true,
+    singleOrigin: true,
+    isFeatured: false,
+    isBestseller: false,
+    rating: 4.88,
+    reviewCount: 61,
+    stock: 85,
+    variants: [
+      { weight: '100g Whole', price: 8.50, stock: 85 },
+      { weight: '250g Whole', price: 17.50, originalPrice: 21.25, stock: 55 },
+      { weight: '500g Whole', price: 30.00, originalPrice: 42.50, stock: 25 },
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80',
+    ],
+    createdAt: new Date().toISOString(),
+  },
+];
+
+// Seed initial users with bcrypt hashed passwords
+const createInitialUsers = (): User[] => {
+  const salt = bcrypt.genSaltSync(10);
+  return [
+    {
+      id: 'usr-superadmin',
+      name: 'Victoria Vance (Superadmin)',
+      email: 'superadmin@spices.com',
+      password: bcrypt.hashSync('superadmin123', salt),
+      role: 'SUPERADMIN',
+      status: 'ACTIVE',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+      phone: '+1 (555) 019-2834',
+      addresses: [
+        {
+          id: 'addr-super-1',
+          fullName: 'Victoria Vance',
+          phone: '+1 (555) 019-2834',
+          addressLine1: '742 Evergreen Botanical Way',
+          city: 'San Francisco',
+          state: 'CA',
+          postalCode: '94107',
+          country: 'United States',
+          isDefault: true,
+        }
+      ],
+      createdAt: '2024-01-01T00:00:00.000Z',
+    },
+    {
+      id: 'usr-admin',
+      name: 'Marcus Sterling (Admin)',
+      email: 'admin@spices.com',
+      password: bcrypt.hashSync('admin123', salt),
+      role: 'ADMIN',
+      status: 'ACTIVE',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+      phone: '+1 (555) 014-9922',
+      addresses: [
+        {
+          id: 'addr-admin-1',
+          fullName: 'Marcus Sterling',
+          phone: '+1 (555) 014-9922',
+          addressLine1: '100 Spice Quarter Plaza',
+          city: 'Portland',
+          state: 'OR',
+          postalCode: '97201',
+          country: 'United States',
+          isDefault: true,
+        }
+      ],
+      createdAt: '2024-01-15T00:00:00.000Z',
+    },
+    {
+      id: 'usr-customer',
+      name: 'Elena Rostova (Customer)',
+      email: 'user@spices.com',
+      password: bcrypt.hashSync('user123', salt),
+      role: 'USER',
+      status: 'ACTIVE',
+      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80',
+      phone: '+1 (555) 017-8392',
+      addresses: [
+        {
+          id: 'addr-cust-1',
+          fullName: 'Elena Rostova',
+          phone: '+1 (555) 017-8392',
+          addressLine1: '348 Culinary Crescent, Apt 4B',
+          city: 'Seattle',
+          state: 'WA',
+          postalCode: '98101',
+          country: 'United States',
+          isDefault: true,
+        }
+      ],
+      createdAt: '2024-02-10T00:00:00.000Z',
+    },
+    {
+      id: 'usr-customer-2',
+      name: 'Devon Patel',
+      email: 'devon@example.com',
+      password: bcrypt.hashSync('password123', salt),
+      role: 'USER',
+      status: 'ACTIVE',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
+      phone: '+1 (555) 012-7711',
+      addresses: [
+        {
+          id: 'addr-cust-2',
+          fullName: 'Devon Patel',
+          phone: '+1 (555) 012-7711',
+          addressLine1: '89 Masala Lane',
+          city: 'Chicago',
+          state: 'IL',
+          postalCode: '60611',
+          country: 'United States',
+          isDefault: true,
+        }
+      ],
+      createdAt: '2024-03-01T00:00:00.000Z',
+    }
+  ];
+};
+
+// Seed initial orders
+const initialOrders: Order[] = [
+  {
+    id: 'ord-1001',
+    orderNumber: 'ZAF-9281',
+    userId: 'usr-customer',
+    customerName: 'Elena Rostova',
+    customerEmail: 'user@spices.com',
+    customerPhone: '+1 (555) 017-8392',
+    items: [
+      {
+        productId: 'prod-1',
+        name: 'Royal Kashmiri Mongra Saffron',
+        weight: '2g',
+        price: 34.00,
+        quantity: 1,
+        image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80',
+      },
+      {
+        productId: 'prod-4',
+        name: 'Alleppey Super Bold Green Cardamom (8mm+)',
+        weight: '100g',
+        price: 29.00,
+        quantity: 1,
+        image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80',
+      }
+    ],
+    subtotal: 63.00,
+    discount: 9.45,
+    couponCode: 'SPICE15',
+    shippingFee: 0.00,
+    shippingMethod: 'Express Aroma-Lock Delivery',
+    tax: 2.68,
+    total: 56.23,
+    shippingAddress: {
+      id: 'addr-cust-1',
+      fullName: 'Elena Rostova',
+      phone: '+1 (555) 017-8392',
+      addressLine1: '348 Culinary Crescent, Apt 4B',
+      city: 'Seattle',
+      state: 'WA',
+      postalCode: '98101',
+      country: 'United States',
+      isDefault: true,
+    },
+    paymentMethod: 'CARD',
+    paymentStatus: 'PAID',
+    orderStatus: 'DELIVERED',
+    carrier: 'DHL Express Heritage',
+    trackingNumber: 'DHL-ZAF-992104',
+    estimatedDelivery: 'Delivered Yesterday',
+    createdAt: new Date(Date.now() - 5 * 86400000).toISOString(),
+    updatedAt: new Date(Date.now() - 1 * 86400000).toISOString(),
+  },
+  {
+    id: 'ord-1002',
+    orderNumber: 'ZAF-9340',
+    userId: 'usr-customer',
+    customerName: 'Elena Rostova',
+    customerEmail: 'user@spices.com',
+    customerPhone: '+1 (555) 017-8392',
+    items: [
+      {
+        productId: 'prod-6',
+        name: '17-Spice Heirloom Royal Garam Masala',
+        weight: '250g Pouch',
+        price: 28.00,
+        quantity: 2,
+        image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80',
+      },
+      {
+        productId: 'prod-2',
+        name: 'Tellicherry Garbled Extra Bold Black Peppercorns',
+        weight: '250g',
+        price: 26.00,
+        quantity: 1,
+        image: 'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=800&q=80',
+      }
+    ],
+    subtotal: 82.00,
+    discount: 0.00,
+    shippingFee: 0.00,
+    shippingMethod: 'Express Aroma-Lock Delivery',
+    tax: 4.10,
+    total: 86.10,
+    shippingAddress: {
+      id: 'addr-cust-1',
+      fullName: 'Elena Rostova',
+      phone: '+1 (555) 017-8392',
+      addressLine1: '348 Culinary Crescent, Apt 4B',
+      city: 'Seattle',
+      state: 'WA',
+      postalCode: '98101',
+      country: 'United States',
+      isDefault: true,
+    },
+    paymentMethod: 'UPI',
+    paymentStatus: 'PAID',
+    orderStatus: 'SHIPPED',
+    carrier: 'FedEx Priority Spices',
+    trackingNumber: 'FDX-77401920',
+    estimatedDelivery: 'Tomorrow by 4:00 PM',
+    createdAt: new Date(Date.now() - 1 * 86400000).toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'ord-1003',
+    orderNumber: 'ZAF-9411',
+    userId: 'usr-customer-2',
+    customerName: 'Devon Patel',
+    customerEmail: 'devon@example.com',
+    customerPhone: '+1 (555) 012-7711',
+    items: [
+      {
+        productId: 'prod-7',
+        name: 'Golden Lakadong Turmeric (7.5%+ Curcumin)',
+        weight: '250g',
+        price: 23.00,
+        quantity: 1,
+        image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80',
+      },
+      {
+        productId: 'prod-9',
+        name: 'Madagascar Bourbon Gourmet Vanilla Beans (Grade A)',
+        weight: '5 Pods (approx 20g)',
+        price: 31.00,
+        quantity: 1,
+        image: 'https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=80',
+      }
+    ],
+    subtotal: 54.00,
+    discount: 10.00,
+    couponCode: 'FIRSTHARVEST',
+    shippingFee: 0.00,
+    shippingMethod: 'Express Aroma-Lock Delivery',
+    tax: 2.20,
+    total: 46.20,
+    shippingAddress: {
+      id: 'addr-cust-2',
+      fullName: 'Devon Patel',
+      phone: '+1 (555) 012-7711',
+      addressLine1: '89 Masala Lane',
+      city: 'Chicago',
+      state: 'IL',
+      postalCode: '60611',
+      country: 'United States',
+      isDefault: true,
+    },
+    paymentMethod: 'CARD',
+    paymentStatus: 'PAID',
+    orderStatus: 'PROCESSING',
+    carrier: 'USPS Spice Priority',
+    trackingNumber: '94001118992231',
+    estimatedDelivery: 'In 3 business days',
+    createdAt: new Date(Date.now() - 4 * 3600000).toISOString(),
+    updatedAt: new Date().toISOString(),
+  }
+];
+
+// Seed reviews
+const initialReviews: Review[] = [
+  {
+    id: 'rev-1',
+    productId: 'prod-1',
+    userId: 'usr-customer',
+    userName: 'Elena Rostova',
+    rating: 5,
+    title: 'Unbelievable aroma - true Mongra saffron!',
+    comment: 'Steeped just 6 threads in warm milk for 20 minutes and it turned the most brilliant rich gold liquor. The floral bittersweet aroma filled the whole kitchen. Completely unlike grocery store saffron.',
+    heatPerception: 'Zero heat, pure golden warmth',
+    isVerified: true,
+    isApproved: true,
+    createdAt: new Date(Date.now() - 3 * 86400000).toISOString(),
+  },
+  {
+    id: 'rev-2',
+    productId: 'prod-2',
+    userId: 'usr-customer-2',
+    userName: 'Chef Devon P.',
+    rating: 5,
+    title: 'The largest peppercorns I have ever seen',
+    comment: 'Crack them coarsely over prime ribeye or tossed in cacio e pepe. The bright citrus and cedar finish blows standard black pepper away.',
+    heatPerception: 'Zesty, deep piperine heat',
+    isVerified: true,
+    isApproved: true,
+    createdAt: new Date(Date.now() - 2 * 86400000).toISOString(),
+  },
+  {
+    id: 'rev-3',
+    productId: 'prod-6',
+    userId: 'usr-customer',
+    userName: 'Elena Rostova',
+    rating: 5,
+    title: 'Heirloom Garam Masala is pure magic',
+    comment: 'You can actually smell the delicate mace and rose petals. It adds such a royal depth to roasted aubergines and chicken korma without being overly pungent.',
+    heatPerception: 'Perfect complex fragrant heat',
+    isVerified: true,
+    isApproved: true,
+    createdAt: new Date(Date.now() - 1 * 86400000).toISOString(),
+  }
+];
+
+// Seed coupons
+const initialCoupons: Coupon[] = [
+  {
+    id: 'coup-1',
+    code: 'SPICE15',
+    type: 'PERCENTAGE',
+    discountValue: 15,
+    minOrderValue: 30,
+    isActive: true,
+    usageCount: 42,
+    expiresAt: '2027-12-31T23:59:59.000Z',
+  },
+  {
+    id: 'coup-2',
+    code: 'FIRSTHARVEST',
+    type: 'FIXED',
+    discountValue: 10,
+    minOrderValue: 40,
+    isActive: true,
+    usageCount: 19,
+    expiresAt: '2027-12-31T23:59:59.000Z',
+  },
+  {
+    id: 'coup-3',
+    code: 'ROYAL20',
+    type: 'PERCENTAGE',
+    discountValue: 20,
+    minOrderValue: 75,
+    isActive: true,
+    usageCount: 8,
+    expiresAt: '2027-12-31T23:59:59.000Z',
+  }
+];
+
+// Seed audit logs
+const initialAuditLogs: AuditLog[] = [
+  {
+    id: 'log-1',
+    userId: 'usr-superadmin',
+    userName: 'Victoria Vance',
+    userRole: 'SUPERADMIN',
+    action: 'SYSTEM_INITIALIZATION',
+    details: 'Zaffran & Clove platform initialized with 12 single-origin spice listings and standard security permissions.',
+    createdAt: '2024-01-01T00:00:00.000Z',
+  },
+  {
+    id: 'log-2',
+    userId: 'usr-admin',
+    userName: 'Marcus Sterling',
+    userRole: 'ADMIN',
+    action: 'INVENTORY_RESTOCK',
+    details: 'Restocked Tellicherry Garbled Extra Bold Black Peppercorns (+120 units).',
+    createdAt: new Date(Date.now() - 2 * 86400000).toISOString(),
+  },
+  {
+    id: 'log-3',
+    userId: 'usr-superadmin',
+    userName: 'Victoria Vance',
+    userRole: 'SUPERADMIN',
+    action: 'ROLE_UPDATE',
+    details: 'Assigned Marcus Sterling the ADMIN role.',
+    createdAt: new Date(Date.now() - 10 * 86400000).toISOString(),
+  }
+];
+
+// Helper to load or initialize DB
+export function getDb(): DatabaseSchema {
+  try {
+    if (!fs.existsSync(DATA_DIR)) {
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+
+    if (!fs.existsSync(DB_FILE)) {
+      const initialDb: DatabaseSchema = {
+        users: createInitialUsers(),
+        products: initialProducts,
+        orders: initialOrders,
+        reviews: initialReviews,
+        coupons: initialCoupons,
+        auditLogs: initialAuditLogs,
+        settings: initialSettings,
+      };
+      fs.writeFileSync(DB_FILE, JSON.stringify(initialDb, null, 2), 'utf-8');
+      return initialDb;
+    }
+
+    const data = fs.readFileSync(DB_FILE, 'utf-8');
+    return JSON.parse(data);
+  } catch (err) {
+    console.error('Error reading database file:', err);
+    // Return memory fallback
+    return {
+      users: createInitialUsers(),
+      products: initialProducts,
+      orders: initialOrders,
+      reviews: initialReviews,
+      coupons: initialCoupons,
+      auditLogs: initialAuditLogs,
+      settings: initialSettings,
+    };
+  }
+}
+
+export function saveDb(db: DatabaseSchema): void {
+  try {
+    if (!fs.existsSync(DATA_DIR)) {
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+    fs.writeFileSync(DB_FILE, JSON.stringify(db, null, 2), 'utf-8');
+  } catch (err) {
+    console.error('Error saving database file:', err);
+  }
+}
+
+// Reset Database to clean state
+export function resetDb(): DatabaseSchema {
+  const freshDb: DatabaseSchema = {
+    users: createInitialUsers(),
+    products: initialProducts,
+    orders: initialOrders,
+    reviews: initialReviews,
+    coupons: initialCoupons,
+    auditLogs: [
+      ...initialAuditLogs,
+      {
+        id: `log-${Date.now()}`,
+        userId: 'usr-superadmin',
+        userName: 'Victoria Vance',
+        userRole: 'SUPERADMIN',
+        action: 'DATABASE_RESET',
+        details: 'Store database was reset to pristine factory state with fresh demo datasets.',
+        createdAt: new Date().toISOString(),
+      }
+    ],
+    settings: initialSettings,
+  };
+  saveDb(freshDb);
+  return freshDb;
+}

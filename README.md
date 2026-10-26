@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Zaffran & Clove - Artisanal Spices eCommerce Platform
 
-## Getting Started
+A full-stack, enterprise-grade Spices eCommerce platform built with **Next.js 14 (App Router)**, **TypeScript**, **Tailwind CSS**, and **RBAC (Role-Based Access Control)** featuring three distinct user categories: **User (Customer)**, **Admin**, and **Superadmin**.
 
-First, run the development server:
+---
 
+## 🌟 Key Platform Features
+
+### 1. 🛍️ Customer (User) Features
+- **Artisanal Visual Catalog**: Discover single-origin spices, hand-ground masalas, and Grade A++ Kashmiri saffron.
+- **Scoville & Heat Index Meter**: Visual chili pepper heat gauge (Level 0: Aromatic to Level 4: Fiery Volcano).
+- **Comprehensive Multi-Filters**: Filter by category, heat index, price sorting, organic certification, and single-origin estate.
+- **Dynamic Weight Variants**: 50g, 100g, 250g, 500g, and 1kg options with dynamic live price recalculation.
+- **Rich Product Detail Pages**: High-resolution zoom gallery, flavor notes radar, culinary pairings, farmer harvest story, and verified customer reviews.
+- **Interactive Sliding Basket (Cart Drawer)**: Real-time subtotal, free shipping progress bar, promo code validation, and quantity steppers.
+- **Checkout & Order Flow**: Multi-option payment simulation (Credit Card, Instant UPI/QR, Cash on Delivery), address validator, and shipping speed selector (Standard Eco vs. Express Aroma-Lock).
+- **Order Confirmation & Live Tracking**: Interactive shipment stepper (`Placed` → `Cold Milled & Sealed` → `Dispatched` → `Delivered`), invoice printer, and celebratory confetti.
+- **Customer Dashboard (`/account`)**: Order history with live tracking numbers, saved delivery addresses, and wishlist manager.
+
+---
+
+### 2. 🛡️ Admin Portal (`/admin`)
+- **Operations Dashboard**: Gross sales KPI, total order volume, active spice catalog count, and real-time low-stock inventory alerts.
+- **Spices Catalog CRUD**: Add new spices with rich attributes (heat level, aroma notes, origin country, weight variants, harvest year), edit existing botanicals, delete, and 1-click quick-restock (+50 units).
+- **Order Fulfillment & Dispatch**: Filter orders by status (`CONFIRMED`, `PROCESSING`, `SHIPPED`, `DELIVERED`, `CANCELLED`), assign carrier services (DHL, FedEx, USPS), and record waybill tracking numbers.
+- **Promotional Coupons Management**: Create percentage or fixed discount promo codes (e.g. `SPICE15`, `FIRSTHARVEST`) with minimum cart totals and usage trackers.
+- **Customer Reviews Moderation**: Approve authentic customer reviews, feature verified buyers, or reject inappropriate submissions.
+
+---
+
+### 3. 👑 Superadmin Portal (`/superadmin`)
+- **System Governance Dashboard**: Platform-wide metrics including customer count, admin staff count, lifetime platform volume, and system health.
+- **User & Role Authority Control (`/superadmin/users`)**:
+  - Full table of all platform accounts with order history and lifetime value.
+  - Role management: **Promote Customer (`USER`) to `ADMIN`** or **Demote `ADMIN` to `USER`**.
+  - Account suspension toggle: Activate or Suspend/Ban accounts.
+  - Superadmin protection rules (prevents self-demotion or removal of the last superadmin).
+- **Global Store & Financial Settings (`/superadmin/settings`)**:
+  - Configure Store Name, Tagline, Currency symbol (`$`, `₹`, `€`, `£`).
+  - Set Tax percentage rate (%) and Free Shipping spend threshold ($).
+  - Configure standard & priority express shipping fees.
+  - Edit announcement banner message and toggle live visibility.
+- **Security Audit Trail (`/superadmin/logs`)**:
+  - Immutable activity log recording who performed what administrative action, when, and specific change details.
+- **Database & Factory Reset Utilities (`/superadmin/database`)**:
+  - 1-Click JSON Database export/backup.
+  - "Restore Factory Demo Data" button to reset the store to a pristine baseline at any time.
+
+---
+
+## 🔑 Pre-Seeded Accounts & Demo Switcher
+
+The platform includes a **Top Sticky Demo Bar** allowing 1-click switching between all three roles without typing credentials:
+
+| Role | Email | Password | Access Level |
+|---|---|---|---|
+| **Superadmin** | `superadmin@spices.com` | `superadmin123` | Full Master System & User Role Governance |
+| **Admin** | `admin@spices.com` | `admin123` | Catalog CRUD, Stock, Orders, Coupons, Reviews |
+| **Customer (User)** | `user@spices.com` | `user123` | Browse, Wishlist, Basket, Checkout, Tracking |
+
+---
+
+## 🛠️ Tech Stack & Architecture
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript (Strict typing)
+- **Styling**: Tailwind CSS with custom artisanal spice color palette (Saffron golds, Paprika reds, Cardamom greens, Warm Cream)
+- **Icons**: Lucide React
+- **Auth**: HMAC-SHA256 session token system with HTTP-only cookies and bcryptjs password hashing
+- **Persistence**: File-based database store in `data/store.json` with thread-safe reads/writes and memory fallback
+- **Visuals**: Curated high-resolution culinary photography from Unsplash
+
+---
+
+## 🚀 Getting Started
+
+### 1. Install Dependencies
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Start Development Server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 3. Build for Production
+```bash
+npm run build
+npm start
+```
