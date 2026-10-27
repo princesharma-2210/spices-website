@@ -41,6 +41,9 @@ export type SpiceCategory =
   | 'Traditional South Indian Powders'
   | 'Whole Spices & Aromatics';
 
+
+
+
 export interface SpiceProduct {
   id: string;
   name: string;

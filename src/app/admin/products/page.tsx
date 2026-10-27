@@ -16,14 +16,15 @@ import {
   Package
 } from 'lucide-react';
 
-const CATEGORIES: SpiceCategory[] = [
-  'Whole Spices',
-  'Ground Spices',
-  'Blends & Masalas',
-  'Saffron & Luxury Botanicals',
-  'Herbs & Seasonings',
-];
 
+
+const CATEGORIES: SpiceCategory[] = [
+  'Spices & Pure Powders',
+  'Authentic Masala Powders',
+  'Regional Biryani & Curry Blends',
+  'Traditional South Indian Powders',
+  'Whole Spices & Aromatics',
+];
 export default function AdminProductsPage() {
   const [products, setProducts] = useState<SpiceProduct[]>([]);
   const [loading, setLoading] = useState(true);
@@ -36,7 +37,7 @@ export default function AdminProductsPage() {
 
   // Form Fields
   const [formName, setFormName] = useState('');
-  const [formCategory, setFormCategory] = useState<SpiceCategory>('Whole Spices');
+  const [formCategory, setFormCategory] = useState<SpiceCategory>('Whole Spices & Aromatics');
   const [formTagline, setFormTagline] = useState('');
   const [formDescription, setFormDescription] = useState('');
   const [formOrigin, setFormOrigin] = useState('');
@@ -79,7 +80,7 @@ export default function AdminProductsPage() {
   const openAddModal = () => {
     setEditingProduct(null);
     setFormName('');
-    setFormCategory('Whole Spices');
+    setFormCategory(CATEGORIES[0]);
     setFormTagline('');
     setFormDescription('');
     setFormOrigin('Wayanad, Kerala');
