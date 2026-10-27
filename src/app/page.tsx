@@ -81,34 +81,34 @@ export default async function HomePage() {
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
                 <Link
                   href="/products"
-                  className="px-7 py-3.5 bg-spice-800 hover:bg-spice-900 text-white rounded-xl font-semibold text-sm shadow-lg hover:shadow-xl transition-all flex items-center gap-2 group"
+                  className="px-5 sm:px-7 py-2.5 sm:py-3.5 bg-spice-800 hover:bg-spice-900 text-white rounded-xl font-semibold text-xs sm:text-sm shadow-lg hover:shadow-xl transition-all flex items-center gap-2 group"
                 >
                   Explore Collection
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
 
                 <Link
                   href="/products?sort=heat-desc"
-                  className="px-6 py-3.5 bg-white hover:bg-stone-50 text-stone-800 border border-stone-200 rounded-xl font-semibold text-sm shadow-xs transition-all flex items-center gap-2 text-red-700"
+                  className="px-4 sm:px-6 py-2.5 sm:py-3.5 bg-white hover:bg-stone-50 text-stone-800 border border-stone-200 rounded-xl font-semibold text-xs sm:text-sm shadow-xs transition-all flex items-center gap-2 text-red-700"
                 >
-                  <Flame className="w-4 h-4 text-red-500 fill-red-500" />
+                  <Flame className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-red-500 fill-red-500" />
                   Shop by Heat Level
                 </Link>
               </div>
 
               {/* Quick Metrics */}
-              <div className="pt-8 border-t border-spice-200/80 grid grid-cols-3 gap-4 text-center lg:text-left">
+              <div className="pt-6 sm:pt-8 border-t border-spice-200/80 grid grid-cols-3 gap-2 sm:gap-4 text-center lg:text-left">
                 <div>
-                  <div className="font-serif font-black text-2xl sm:text-3xl text-spice-900">100%</div>
-                  <div className="text-xs text-stone-500 font-medium mt-0.5">Single-Origin</div>
+                  <div className="font-serif font-black text-xl sm:text-2xl lg:text-3xl text-spice-900">100%</div>
+                  <div className="text-[10px] sm:text-xs text-stone-500 font-medium mt-0.5">Single-Origin</div>
                 </div>
                 <div>
-                  <div className="font-serif font-black text-2xl sm:text-3xl text-spice-900">&lt; 35°C</div>
-                  <div className="text-xs text-stone-500 font-medium mt-0.5">Cold Stone Milling</div>
+                  <div className="font-serif font-black text-xl sm:text-2xl lg:text-3xl text-spice-900">&lt; 35°C</div>
+                  <div className="text-[10px] sm:text-xs text-stone-500 font-medium mt-0.5">Cold Stone Milling</div>
                 </div>
                 <div>
-                  <div className="font-serif font-black text-2xl sm:text-3xl text-spice-900">0%</div>
-                  <div className="text-xs text-stone-500 font-medium mt-0.5">Fillers or Starch</div>
+                  <div className="font-serif font-black text-xl sm:text-2xl lg:text-3xl text-spice-900">0%</div>
+                  <div className="text-[10px] sm:text-xs text-stone-500 font-medium mt-0.5">Fillers or Starch</div>
                 </div>
               </div>
             </div>
@@ -312,53 +312,53 @@ export default async function HomePage() {
       </section>
 
       {/* 6. Provenance & Ethos Banner */}
-      <section className="bg-cream-200/60 py-16 border-y border-spice-200/80">
+      <section className="bg-cream-200/60 py-10 sm:py-16 border-y border-spice-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-xs font-bold uppercase tracking-widest text-spice-700">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-spice-700">
               The Anjali Spices Standard
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-stone-900 mt-2">
+            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-stone-900 mt-2">
               Why Real Spices Smell, Look & Taste Different
             </h2>
-            <p className="text-stone-600 text-sm mt-3 leading-relaxed">
+            <p className="text-stone-600 text-xs sm:text-sm mt-3 leading-relaxed">
               Supermarket spices are typically over-processed with high friction mill heat, stored in clear plastic for years, and depleted of vital aromatic compounds. We do the opposite.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-stone-200/80">
-              <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-4">
-                <Leaf className="w-6 h-6" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8">
+            <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-stone-200/80">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-3 sm:mb-4">
+                <Leaf className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <h3 className="font-serif font-bold text-stone-900 text-lg mb-2">
+              <h3 className="font-serif font-bold text-stone-900 text-base sm:text-lg mb-1.5 sm:mb-2">
                 Generational Heritage Farmers
               </h3>
-              <p className="text-xs text-stone-500 leading-relaxed">
+              <p className="text-[11px] sm:text-xs text-stone-500 leading-relaxed">
                 We contract directly with smallholder heritage estates in Kashmir, Kerala, Sri Lanka, and Spain, paying fair-trade premiums well above commodity market rates.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-stone-200/80">
-              <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center mb-4">
-                <Globe2 className="w-6 h-6" />
+            <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-stone-200/80">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center mb-3 sm:mb-4">
+                <Globe2 className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <h3 className="font-serif font-bold text-stone-900 text-lg mb-2">
+              <h3 className="font-serif font-bold text-stone-900 text-base sm:text-lg mb-1.5 sm:mb-2">
                 Traceable Batch Harvests
               </h3>
-              <p className="text-xs text-stone-500 leading-relaxed">
+              <p className="text-[11px] sm:text-xs text-stone-500 leading-relaxed">
                 Every tin and pouch features the harvest season, altitude, curing technique, and origin estate stamped right on the front. No mysterious warehouse blends.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-stone-200/80">
-              <div className="w-12 h-12 rounded-xl bg-spice-50 text-spice-800 flex items-center justify-center mb-4">
-                <CheckCircle className="w-6 h-6" />
+            <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-stone-200/80">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-spice-50 text-spice-800 flex items-center justify-center mb-3 sm:mb-4">
+                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <h3 className="font-serif font-bold text-stone-900 text-lg mb-2">
+              <h3 className="font-serif font-bold text-stone-900 text-base sm:text-lg mb-1.5 sm:mb-2">
                 UV & Oxygen Barrier Seal
               </h3>
-              <p className="text-xs text-stone-500 leading-relaxed">
+              <p className="text-[11px] sm:text-xs text-stone-500 leading-relaxed">
                 Our heavy-gauge foil pouches and amber apothecary jars are flushed with food-grade nitrogen to halt oxidation, sealing that fresh-picked aroma until you crack the seal.
               </p>
             </div>

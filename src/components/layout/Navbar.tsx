@@ -42,33 +42,33 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-spice-200/80 shadow-xs">
       {/* Top Announcement Bar */}
-      <div className="bg-spice-900 text-stone-200 text-[11px] py-1.5 px-4 text-center font-medium tracking-wide">
-        <span className="inline-flex items-center gap-1.5">
-          <Sparkles className="w-3.5 h-3.5 text-saffron-400" />
-          <span>Authentic Indian Heritage Spices: Enjoy 15% off with code <strong>ANJALI15</strong> | Free Shipping over ₹499</span>
+      <div className="bg-spice-900 text-stone-200 text-[10px] sm:text-[11px] py-1.5 px-2 sm:px-4 text-center font-medium tracking-wide">
+        <span className="inline-flex items-center gap-1 sm:gap-1.5 flex-wrap justify-center">
+          <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-saffron-400 flex-shrink-0" />
+          <span className="leading-tight">Authentic Indian Heritage Spices: 15% off <strong>ANJALI15</strong> | Free Shipping over ₹499</span>
         </span>
       </div>
 
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 gap-4">
+        <div className="flex items-center justify-between h-16 sm:h-20 gap-2 sm:gap-4">
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-stone-700 hover:text-spice-900 focus:outline-none"
+            className="md:hidden p-1.5 -ml-1 text-stone-700 hover:text-spice-900 focus:outline-none"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
 
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-spice-900 to-paprika-700 flex items-center justify-center text-saffron-300 shadow-md">
-              <span className="font-serif font-black text-xl">A</span>
+          <Link href="/" className="flex items-center gap-1.5 sm:gap-2.5 shrink-0 min-w-0">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-gradient-to-tr from-spice-900 to-paprika-700 flex items-center justify-center text-saffron-300 shadow-md flex-shrink-0">
+              <span className="font-serif font-black text-lg sm:text-xl">A</span>
             </div>
-            <div>
-              <span className="font-serif font-bold text-xl sm:text-2xl tracking-tight text-stone-900 block leading-tight">
+            <div className="min-w-0">
+              <span className="font-serif font-bold text-lg sm:text-xl lg:text-2xl tracking-tight text-stone-900 block leading-tight truncate">
                 Anjali Spices
               </span>
-              <span className="text-[10px] uppercase tracking-widest text-spice-700 font-semibold block -mt-1">
+              <span className="text-[8px] sm:text-[10px] uppercase tracking-widest text-spice-700 font-semibold block -mt-0.5 sm:-mt-1 truncate hidden xs:block">
                 Authentic Indian Masalas & Pure Powders
               </span>
             </div>
@@ -110,16 +110,16 @@ export function Navbar() {
           </form>
 
           {/* Actions: Wishlist, Cart, Account */}
-          <div className="flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-1 sm:gap-2 md:gap-4">
             {/* Wishlist Link */}
             <Link
               href="/account#wishlist"
-              className="p-2 text-stone-700 hover:text-spice-800 relative rounded-full hover:bg-stone-100 transition-colors"
+              className="p-1.5 sm:p-2 text-stone-700 hover:text-spice-800 relative rounded-full hover:bg-stone-100 transition-colors"
               title="Wishlist"
             >
-              <Heart className="w-5 h-5" />
+              <Heart className="w-4 h-4 sm:w-5 sm:h-5" />
               {wishlistCount > 0 && (
-                <span className="absolute top-1 right-1 w-4 h-4 bg-red-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+                <span className="absolute top-0.5 right-0.5 sm:top-1 sm:right-1 w-3.5 h-3.5 sm:w-4 sm:h-4 bg-red-600 text-white text-[9px] sm:text-[10px] font-bold rounded-full flex items-center justify-center">
                   {wishlistCount}
                 </span>
               )}
@@ -128,12 +128,12 @@ export function Navbar() {
             {/* Cart Trigger */}
             <button
               onClick={() => setIsCartDrawerOpen(true)}
-              className="p-2 text-stone-700 hover:text-spice-800 relative rounded-full hover:bg-stone-100 transition-colors"
+              className="p-1.5 sm:p-2 text-stone-700 hover:text-spice-800 relative rounded-full hover:bg-stone-100 transition-colors"
               title="Spice Basket"
             >
-              <ShoppingBag className="w-5 h-5" />
+              <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
               {itemCount > 0 && (
-                <span className="absolute top-1 right-1 w-4 h-4 bg-spice-800 text-saffron-300 text-[10px] font-bold rounded-full flex items-center justify-center">
+                <span className="absolute top-0.5 right-0.5 sm:top-1 sm:right-1 w-3.5 h-3.5 sm:w-4 sm:h-4 bg-spice-800 text-saffron-300 text-[9px] sm:text-[10px] font-bold rounded-full flex items-center justify-center">
                   {itemCount}
                 </span>
               )}
@@ -145,9 +145,9 @@ export function Navbar() {
                 <div>
                   <button
                     onClick={() => setUserDropdownOpen(!userDropdownOpen)}
-                    className="flex items-center gap-2 p-1.5 rounded-xl hover:bg-stone-100 border border-transparent hover:border-stone-200 transition-all text-left"
+                    className="flex items-center gap-1 sm:gap-2 p-1 sm:p-1.5 rounded-xl hover:bg-stone-100 border border-transparent hover:border-stone-200 transition-all text-left"
                   >
-                    <div className="w-8 h-8 rounded-full bg-spice-800 text-saffron-200 flex items-center justify-center font-bold text-xs">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-spice-800 text-saffron-200 flex items-center justify-center font-bold text-[10px] sm:text-xs">
                       {user.name.charAt(0)}
                     </div>
                     <div className="hidden sm:block">
@@ -161,7 +161,7 @@ export function Navbar() {
                         {user.role}
                       </span>
                     </div>
-                    <ChevronDown className="w-3.5 h-3.5 text-stone-400 hidden sm:block" />
+                    <ChevronDown className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-stone-400 hidden sm:block" />
                   </button>
 
                   {userDropdownOpen && (
@@ -226,16 +226,16 @@ export function Navbar() {
                   )}
                 </div>
               ) : (
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1 sm:gap-2">
                   <Link
                     href="/login"
-                    className="px-3 py-1.5 text-xs font-semibold text-stone-700 hover:text-spice-900"
+                    className="px-2 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-semibold text-stone-700 hover:text-spice-900 whitespace-nowrap"
                   >
                     Sign In
                   </Link>
                   <Link
                     href="/register"
-                    className="px-3 py-1.5 bg-spice-800 hover:bg-spice-900 text-white rounded-xl text-xs font-semibold shadow-xs transition-all"
+                    className="px-2 sm:px-3 py-1 sm:py-1.5 bg-spice-800 hover:bg-spice-900 text-white rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-semibold shadow-xs transition-all whitespace-nowrap"
                   >
                     Register
                   </Link>
@@ -247,12 +247,12 @@ export function Navbar() {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-stone-100 flex flex-col gap-3">
+          <div className="md:hidden py-3 border-t border-stone-100 flex flex-col gap-2.5">
             <form onSubmit={handleSearch} className="relative">
               <Search className="w-4 h-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
-                placeholder="Search whole spices, powders..."
+                placeholder="Search spices, powders..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-9 pr-4 py-2 bg-stone-100 text-xs rounded-xl focus:outline-none"

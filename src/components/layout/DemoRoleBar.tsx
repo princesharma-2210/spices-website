@@ -9,74 +9,76 @@ export function DemoRoleBar() {
   const { user, switchDemoRole, loading } = useAuth();
 
   return (
-    <div className="bg-gradient-to-r from-stone-900 via-spice-950 to-stone-900 text-stone-200 text-xs py-2 px-4 border-b border-spice-800/50 shadow-inner z-50 relative">
-      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+    <div className="bg-gradient-to-r from-stone-900 via-spice-950 to-stone-900 text-stone-200 text-[10px] sm:text-xs py-1.5 sm:py-2 px-2 sm:px-4 border-b border-spice-800/50 shadow-inner z-50 relative">
+      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 sm:gap-3">
         {/* Active Identity Badge */}
-        <div className="flex items-center gap-2">
-          <span className="flex h-2 w-2 relative">
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <span className="flex h-1.5 w-1.5 sm:h-2 sm:w-2 relative">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-saffron-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-saffron-500"></span>
+            <span className="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-saffron-500"></span>
           </span>
-          <span className="text-stone-400 font-medium">Active Role:</span>
+          <span className="text-stone-400 font-medium hidden xs:inline">Active Role:</span>
           {user ? (
-            <span className={`inline-flex items-center gap-1 font-semibold px-2 py-0.5 rounded text-[11px] ${
+            <span className={`inline-flex items-center gap-1 font-semibold px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px] ${
               user.role === 'SUPERADMIN' 
                 ? 'bg-purple-900/60 text-purple-200 border border-purple-500/40' 
                 : user.role === 'ADMIN'
                 ? 'bg-amber-900/60 text-amber-200 border border-amber-500/40'
                 : 'bg-emerald-900/60 text-emerald-200 border border-emerald-500/40'
             }`}>
-              {user.role === 'SUPERADMIN' && <ShieldAlert className="w-3 h-3 text-purple-400" />}
-              {user.role === 'ADMIN' && <ShieldCheck className="w-3 h-3 text-amber-400" />}
-              {user.role === 'USER' && <UserIcon className="w-3 h-3 text-emerald-400" />}
-              {user.role} <span className="opacity-75">({user.name.split(' ')[0]})</span>
+              {user.role === 'SUPERADMIN' && <ShieldAlert className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-purple-400" />}
+              {user.role === 'ADMIN' && <ShieldCheck className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-amber-400" />}
+              {user.role === 'USER' && <UserIcon className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-emerald-400" />}
+              {user.role} <span className="opacity-75 hidden sm:inline">({user.name.split(' ')[0]})</span>
             </span>
           ) : (
-            <span className="text-stone-400 italic">Guest (Not logged in)</span>
+            <span className="text-stone-400 italic text-[10px] sm:text-xs">Guest</span>
           )}
         </div>
 
         {/* Quick Demo Role Switcher Buttons */}
-        <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-stone-400 hidden sm:inline">Instant Role Switcher:</span>
+        <div className="flex items-center gap-1 sm:gap-2 flex-wrap">
+          <span className="text-stone-400 hidden md:inline">Instant Role Switcher:</span>
           
           <button
             onClick={() => switchDemoRole('USER')}
             disabled={loading}
-            className={`px-2.5 py-1 rounded transition-all font-medium flex items-center gap-1.5 ${
+            className={`px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded transition-all font-medium flex items-center gap-1 text-[10px] sm:text-xs ${
               user?.role === 'USER'
-                ? 'bg-emerald-600 text-white ring-2 ring-emerald-400 font-bold'
+                ? 'bg-emerald-600 text-white ring-1 sm:ring-2 ring-emerald-400 font-bold'
                 : 'bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-white'
             }`}
           >
-            <UserIcon className="w-3 h-3" />
-            Customer (User)
+            <UserIcon className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+            <span className="hidden xs:inline">Customer (User)</span>
+            <span className="xs:hidden">User</span>
           </button>
 
           <button
             onClick={() => switchDemoRole('ADMIN')}
             disabled={loading}
-            className={`px-2.5 py-1 rounded transition-all font-medium flex items-center gap-1.5 ${
+            className={`px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded transition-all font-medium flex items-center gap-1 text-[10px] sm:text-xs ${
               user?.role === 'ADMIN'
-                ? 'bg-amber-600 text-white ring-2 ring-amber-400 font-bold'
+                ? 'bg-amber-600 text-white ring-1 sm:ring-2 ring-amber-400 font-bold'
                 : 'bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-white'
             }`}
           >
-            <ShieldCheck className="w-3 h-3" />
+            <ShieldCheck className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
             Admin
           </button>
 
           <button
             onClick={() => switchDemoRole('SUPERADMIN')}
             disabled={loading}
-            className={`px-2.5 py-1 rounded transition-all font-medium flex items-center gap-1.5 ${
+            className={`px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded transition-all font-medium flex items-center gap-1 text-[10px] sm:text-xs ${
               user?.role === 'SUPERADMIN'
-                ? 'bg-purple-600 text-white ring-2 ring-purple-400 font-bold'
+                ? 'bg-purple-600 text-white ring-1 sm:ring-2 ring-purple-400 font-bold'
                 : 'bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-white'
             }`}
           >
-            <ShieldAlert className="w-3 h-3" />
-            Superadmin
+            <ShieldAlert className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+            <span className="hidden sm:inline">Superadmin</span>
+            <span className="sm:hidden">Super</span>
           </button>
 
           {/* Quick link to portals if Admin / Superadmin */}
