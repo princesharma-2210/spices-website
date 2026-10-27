@@ -37,10 +37,10 @@ export default function RegisterPage() {
     <div className="max-w-md mx-auto px-4 py-16 space-y-8">
       <div className="text-center space-y-2">
         <div className="w-12 h-12 rounded-2xl bg-spice-800 text-saffron-300 font-serif font-black text-xl flex items-center justify-center mx-auto shadow-md">
-          Z
+          A
         </div>
         <h1 className="font-serif text-3xl font-bold text-stone-900">
-          Join Zaffran & Clove
+          Join Anjali Spices
         </h1>
         <p className="text-xs text-stone-500">
           Create an account for fresh batch updates and express checkout

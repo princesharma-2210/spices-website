@@ -3,6 +3,9 @@ import { getDb } from '@/lib/db';
 import { signSession, AUTH_COOKIE_NAME } from '@/lib/auth';
 import { Role } from '@/types';
 
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 export async function POST(req: Request) {
   try {
     const { targetRole } = await req.json() as { targetRole: Role };

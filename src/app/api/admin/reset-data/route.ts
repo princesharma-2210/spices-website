@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import { resetDb } from '@/lib/db';
 import { getServerSession } from '@/lib/auth';
 
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 export async function POST() {
   try {
     const user = await getServerSession();

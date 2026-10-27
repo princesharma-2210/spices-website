@@ -3,6 +3,9 @@ import { getDb, saveDb } from '@/lib/db';
 import { hashPassword, signSession, AUTH_COOKIE_NAME } from '@/lib/auth';
 import { User } from '@/types';
 
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 export async function POST(req: Request) {
   try {
     const { name, email, password, phone } = await req.json();

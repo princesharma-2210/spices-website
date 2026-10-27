@@ -3,6 +3,9 @@ import { getDb, saveDb } from '@/lib/db';
 import { getServerSession } from '@/lib/auth';
 import { Order, OrderItem } from '@/types';
 
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 export async function GET(req: Request) {
   try {
     const user = await getServerSession();
@@ -122,14 +125,14 @@ export async function POST(req: Request) {
     const tax = Number(((taxableAmount * db.settings.taxRate) / 100).toFixed(2));
     const total = Number((taxableAmount + shippingFee + tax).toFixed(2));
 
-    const orderNumber = `ZAF-${Math.floor(1000 + Math.random() * 9000)}`;
+    const orderNumber = `ANJ-${Math.floor(1000 + Math.random() * 9000)}`;
 
     const newOrder: Order = {
       id: `ord-${Date.now()}`,
       orderNumber,
       userId: user ? user.id : `guest-${Date.now()}`,
       customerName: shippingAddress.fullName,
-      customerEmail: user ? user.email : body.email || 'customer@spices.com',
+      customerEmail: user ? user.email : body.email || 'customer@anjalispices.com',
       customerPhone: shippingAddress.phone || '+1 (555) 000-0000',
       items: validatedItems,
       subtotal: Number(subtotal.toFixed(2)),

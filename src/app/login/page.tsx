@@ -48,10 +48,10 @@ export default function LoginPage() {
       {/* Brand Header */}
       <div className="text-center space-y-2">
         <div className="w-12 h-12 rounded-2xl bg-spice-800 text-saffron-300 font-serif font-black text-xl flex items-center justify-center mx-auto shadow-md">
-          Z
+          A
         </div>
         <h1 className="font-serif text-3xl font-bold text-stone-900">
-          Welcome to Trade With Anjali
+          Welcome to Anjali Spices
         </h1>
         <p className="text-xs text-stone-500">
           Sign in to your artisanal spices account
@@ -131,7 +131,7 @@ export default function LoginPage() {
                 <UserIcon className="w-4 h-4 text-emerald-600" />
                 <div>
                   <div className="text-xs font-bold leading-none">Customer (User)</div>
-                  <div className="text-[10px] text-emerald-700 opacity-80">user@spices.com</div>
+                  <div className="text-[10px] text-emerald-700 opacity-80">user@anjalispices.com</div>
                 </div>
               </div>
               <span className="text-[11px] font-semibold text-emerald-800">Login &rarr;</span>
@@ -145,7 +145,7 @@ export default function LoginPage() {
                 <ShieldCheck className="w-4 h-4 text-amber-600" />
                 <div>
                   <div className="text-xs font-bold leading-none">Admin</div>
-                  <div className="text-[10px] text-amber-700 opacity-80">admin@spices.com</div>
+                  <div className="text-[10px] text-amber-700 opacity-80">admin@anjalispices.com</div>
                 </div>
               </div>
               <span className="text-[11px] font-semibold text-amber-800">Login &rarr;</span>
@@ -159,7 +159,7 @@ export default function LoginPage() {
                 <ShieldAlert className="w-4 h-4 text-purple-600" />
                 <div>
                   <div className="text-xs font-bold leading-none">Superadmin</div>
-                  <div className="text-[10px] text-purple-700 opacity-80">superadmin@spices.com</div>
+                  <div className="text-[10px] text-purple-700 opacity-80">superadmin@anjalispices.com</div>
                 </div>
               </div>
               <span className="text-[11px] font-semibold text-purple-800">Login &rarr;</span>

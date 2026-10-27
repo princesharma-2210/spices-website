@@ -4,7 +4,7 @@ import { cookies } from 'next/headers';
 import { User, Role } from '@/types';
 import { getDb } from './db';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'zaffran-clove-secret-key-super-secure-artisanal-spices';
+const JWT_SECRET = process.env.JWT_SECRET || 'anjali-spices-dev-secret-change-in-production';
 const AUTH_COOKIE_NAME = 'zaffran_auth_session';
 
 export interface SessionPayload {

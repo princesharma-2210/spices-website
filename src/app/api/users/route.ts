@@ -4,6 +4,9 @@ import { getServerSession } from '@/lib/auth';
 import { Role, UserStatus } from '@/types';
 
 // GET all users (Superadmin only)
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 export async function GET() {
   try {
     const session = await getServerSession();

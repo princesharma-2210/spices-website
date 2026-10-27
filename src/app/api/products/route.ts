@@ -3,6 +3,9 @@ import { getDb, saveDb } from '@/lib/db';
 import { getServerSession } from '@/lib/auth';
 import { SpiceProduct } from '@/types';
 
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);

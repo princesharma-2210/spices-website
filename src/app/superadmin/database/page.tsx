@@ -47,7 +47,7 @@ export default function SuperadminDatabasePage() {
 
       const dump = {
         exportedAt: new Date().toISOString(),
-        store: 'Zaffran & Clove Artisanal Spices',
+        store: 'Anjali Spices',
         products: products.products,
         orders: orders.orders,
       };
@@ -56,7 +56,7 @@ export default function SuperadminDatabasePage() {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `zaffran-spices-backup-${new Date().toISOString().split('T')[0]}.json`;
+      a.download = `anjali-spices-backup-${new Date().toISOString().split('T')[0]}.json`;
       a.click();
     } catch (err) {
       console.error(err);

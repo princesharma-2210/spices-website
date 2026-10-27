@@ -3,6 +3,9 @@ import { getDb, saveDb } from '@/lib/db';
 import { getServerSession } from '@/lib/auth';
 import { Coupon } from '@/types';
 
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 export async function GET() {
   try {
     const user = await getServerSession();

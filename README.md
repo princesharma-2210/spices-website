@@ -1,4 +1,4 @@
-# Zaffran & Clove - Artisanal Spices eCommerce Platform
+# Anjali Spices - Artisanal Indian Spices eCommerce Platform
 
 A full-stack, enterprise-grade Spices eCommerce platform built with **Next.js 14 (App Router)**, **TypeScript**, **Tailwind CSS**, and **RBAC (Role-Based Access Control)** featuring three distinct user categories: **User (Customer)**, **Admin**, and **Superadmin**.
 
@@ -54,9 +54,9 @@ The platform includes a **Top Sticky Demo Bar** allowing 1-click switching betwe
 
 | Role | Email | Password | Access Level |
 |---|---|---|---|
-| **Superadmin** | `superadmin@spices.com` | `superadmin123` | Full Master System & User Role Governance |
-| **Admin** | `admin@spices.com` | `admin123` | Catalog CRUD, Stock, Orders, Coupons, Reviews |
-| **Customer (User)** | `user@spices.com` | `user123` | Browse, Wishlist, Basket, Checkout, Tracking |
+| **Superadmin** | `superadmin@anjalispices.com` | `superadmin123` | Full Master System & User Role Governance |
+| **Admin** | `admin@anjalispices.com` | `admin123` | Catalog CRUD, Stock, Orders, Coupons, Reviews |
+| **Customer (User)** | `user@anjalispices.com` | `user123` | Browse, Wishlist, Basket, Checkout, Tracking |
 
 ---
 
@@ -67,8 +67,8 @@ The platform includes a **Top Sticky Demo Bar** allowing 1-click switching betwe
 - **Styling**: Tailwind CSS with custom artisanal spice color palette (Saffron golds, Paprika reds, Cardamom greens, Warm Cream)
 - **Icons**: Lucide React
 - **Auth**: HMAC-SHA256 session token system with HTTP-only cookies and bcryptjs password hashing
-- **Persistence**: File-based database store in `data/store.json` with thread-safe reads/writes and memory fallback
-- **Visuals**: Curated high-resolution culinary photography from Unsplash
+- **Persistence**: JSON database store in `data/store.json` locally, with a writable/ephemeral store plus in-memory fallback on serverless platforms
+- **Visuals**: Curated high-resolution culinary photography from Unsplash and Shopify CDN
 
 ---
 
@@ -90,4 +90,33 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 npm run build
 npm start
 ```
-# spices-website
+
+---
+
+## ▲ Deploying to Vercel
+
+1. Push the repository to GitHub and import it at [vercel.com/new](https://vercel.com/new).
+2. Vercel auto-detects Next.js. Keep the defaults:
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `.next`
+3. Add the following environment variables in **Project → Settings → Environment Variables**:
+   - `JWT_SECRET` — a long random string used to sign session cookies (required for production security).
+   - `DATA_DIR` — optional. Only set this if you mount a persistent writable volume.
+4. Deploy.
+
+### Storage on Vercel
+
+Vercel's deployment filesystem is **read-only** and `/tmp` is ephemeral. This app is configured to:
+
+- Write the JSON store to `/tmp/anjali-spices-data` when `VERCEL` is set.
+- Fall back to an in-memory copy if no writable path is available, so the site still works instead of crashing.
+
+That means demo data (orders, stock, new users) works, but changes may not persist across cold starts or across multiple serverless instances. For durable production data, replace `src/lib/db.ts` with a hosted database (Vercel Postgres, Neon, Supabase, MongoDB, or Vercel KV) or point `DATA_DIR` at a persistent mounted volume.
+
+### Environment variables
+
+Copy `.env.example` to `.env.local` for local development:
+
+```bash
+cp .env.example .env.local
+```

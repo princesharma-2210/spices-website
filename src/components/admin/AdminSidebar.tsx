@@ -47,10 +47,10 @@ export function AdminSidebar() {
         {/* Brand Header */}
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-spice-700 to-saffron-500 flex items-center justify-center font-serif font-bold text-white shadow-md">
-            Z
+            A
           </div>
           <div>
-            <h2 className="font-serif font-bold text-white text-sm">Zaffran & Clove</h2>
+            <h2 className="font-serif font-bold text-white text-sm">Anjali Spices</h2>
             <span className="text-[10px] font-semibold text-stone-400 uppercase tracking-widest block -mt-0.5">
               Portal Console
             </span>

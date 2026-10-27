@@ -24,7 +24,7 @@ export default function CheckoutPage() {
 
   // Shipping details state
   const [fullName, setFullName] = useState(user?.name || 'Elena Rostova');
-  const [email, setEmail] = useState(user?.email || 'user@spices.com');
+  const [email, setEmail] = useState(user?.email || 'user@anjalispices.com');
   const [phone, setPhone] = useState(user?.phone || '+1 (555) 017-8392');
   const [addressLine1, setAddressLine1] = useState('348 Culinary Crescent, Apt 4B');
   const [city, setCity] = useState('Seattle');
@@ -373,7 +373,7 @@ export default function CheckoutPage() {
                 <div className="w-28 h-28 bg-white border border-stone-300 rounded-xl mx-auto flex items-center justify-center p-2 shadow-inner">
                   <QrCode className="w-20 h-20 text-stone-800" />
                 </div>
-                <span className="text-[11px] text-stone-400 font-mono block">zaffran@upi</span>
+                <span className="text-[11px] text-stone-400 font-mono block">anjalispices@upi</span>
               </div>
             )}
 
@@ -466,7 +466,7 @@ export default function CheckoutPage() {
           </button>
 
           <p className="text-[11px] text-stone-400 text-center leading-relaxed">
-            By placing this order, you agree to Zaffran & Clove terms of harvest freshness and aroma retention guarantee.
+            By placing this order, you agree to Anjali Spices terms of harvest freshness and aroma retention guarantee.
           </p>
         </div>
       </form>

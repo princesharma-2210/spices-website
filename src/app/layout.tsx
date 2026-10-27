@@ -9,7 +9,7 @@ import { CartDrawer } from '@/components/cart/CartDrawer';
 import { Footer } from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
-  title: 'Trade With Anajali | Artisanal Single-Origin Spices & Heritage Blends',
+  title: 'Anjali Spices | Authentic Indian Spices & Heritage Masalas',
   description: 'Pure, fresh-harvested whole spices, slow stone-ground masalas, and Grade A++ Kashmiri saffron directly from estate growers.',
 };
 

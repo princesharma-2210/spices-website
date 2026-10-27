@@ -57,26 +57,26 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-2 mb-3">
             <div className="w-8 h-8 rounded-lg bg-spice-800 text-saffron-300 flex items-center justify-center font-serif font-bold text-lg">
-              Z
+              A
             </div>
-            <span className="font-serif font-bold text-white text-base">Zaffran & Clove</span>
+            <span className="font-serif font-bold text-white text-base">Anjali Spices</span>
           </div>
           <p className="text-stone-400 leading-relaxed">
-            Curators of rare, potent, single-estate botanicals, sun-dried chillies, and heirloom ground masalas.
+            Authentic Indian spices, traditional masalas, and pure stone-ground powders sourced from heritage farms.
           </p>
           <div className="mt-4 text-stone-400">
-            <p><strong>Concierge:</strong> concierge@zaffranandclove.com</p>
-            <p className="mt-0.5"><strong>Phone:</strong> +1 (800) 555-SPICE</p>
+            <p><strong>Support:</strong> care@anjalispices.com</p>
+            <p className="mt-0.5"><strong>Phone:</strong> +91 (040) 2335-SPICE</p>
           </div>
         </div>
 
         <div>
           <h5 className="font-serif font-bold text-white text-sm mb-3">Explore Spices</h5>
           <ul className="space-y-2 text-stone-400">
-            <li><Link href="/products?category=Whole+Spices" className="hover:text-saffron-300 transition-colors">Whole Spices</Link></li>
-            <li><Link href="/products?category=Ground+Spices" className="hover:text-saffron-300 transition-colors">Stone Ground Powders</Link></li>
-            <li><Link href="/products?category=Blends+%26+Masalas" className="hover:text-saffron-300 transition-colors">Heritage Masalas</Link></li>
-            <li><Link href="/products?category=Saffron+%26+Luxury+Botanicals" className="hover:text-saffron-300 transition-colors">Kashmiri Saffron & Vanilla</Link></li>
+            <li><Link href="/products?category=Spices+%26+Pure+Powders" className="hover:text-saffron-300 transition-colors">Spices & Pure Powders</Link></li>
+            <li><Link href="/products?category=Authentic+Masala+Powders" className="hover:text-saffron-300 transition-colors">Authentic Masala Powders</Link></li>
+            <li><Link href="/products?category=Regional+Biryani+%26+Curry+Blends" className="hover:text-saffron-300 transition-colors">Regional Biryani & Curry</Link></li>
+            <li><Link href="/products?category=Traditional+South+Indian+Powders" className="hover:text-saffron-300 transition-colors">Traditional South Indian</Link></li>
             <li><Link href="/products?sort=heat-desc" className="hover:text-saffron-300 transition-colors">Heat Index Explorer</Link></li>
           </ul>
         </div>
@@ -117,7 +117,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-stone-800 text-center py-5 text-xs text-stone-500">
-        &copy; {new Date().getFullYear()} Zaffran & Clove Artisanal Spices Co. Crafted for culinary purists.
+        &copy; {new Date().getFullYear()} Anjali Spices. Authentic Indian spices crafted for culinary purists.
       </div>
     </footer>
   );

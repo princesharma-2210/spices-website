@@ -16,11 +16,11 @@ import {
 
 const CATEGORIES: ('All' | SpiceCategory)[] = [
   'All',
-  'Whole Spices',
-  'Ground Spices',
-  'Blends & Masalas',
-  'Saffron & Luxury Botanicals',
-  'Herbs & Seasonings',
+  'Spices & Pure Powders',
+  'Authentic Masala Powders',
+  'Regional Biryani & Curry Blends',
+  'Traditional South Indian Powders',
+  'Whole Spices & Aromatics',
 ];
 
 const HEAT_LEVELS = [

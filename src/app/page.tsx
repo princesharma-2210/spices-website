@@ -23,32 +23,32 @@ export default async function HomePage() {
 
   const categories = [
     {
-      title: 'Whole Spices',
-      count: db.products.filter(p => p.category === 'Whole Spices').length,
-      image: 'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=600&q=80',
-      href: '/products?category=Whole+Spices',
-      description: 'Hand-picked tellicherry peppercorns, cardamom pods & Ceylon quills',
-    },
-    {
-      title: 'Stone Ground Powders',
-      count: db.products.filter(p => p.category === 'Ground Spices').length,
+      title: 'Spices & Pure Powders',
+      count: db.products.filter(p => p.category === 'Spices & Pure Powders').length,
       image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=600&q=80',
-      href: '/products?category=Ground+Spices',
-      description: 'Slow-milled cold under 35°C to preserve natural volatile aromatics',
+      href: '/products?category=Spices+%26+Pure+Powders',
+      description: 'Stone-ground chilli, turmeric, coriander & Kura Karam powders',
     },
     {
-      title: 'Heritage Masalas',
-      count: db.products.filter(p => p.category === 'Blends & Masalas').length,
+      title: 'Authentic Masala Powders',
+      count: db.products.filter(p => p.category === 'Authentic Masala Powders').length,
       image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80',
-      href: '/products?category=Blends+%26+Masalas',
-      description: '17-spice heirloom royal garam masala & authentic spice blends',
+      href: '/products?category=Authentic+Masala+Powders',
+      description: 'Temple-style sambar, rasam, garam masala & street-food blends',
     },
     {
-      title: 'Saffron & Rare Botanicals',
-      count: db.products.filter(p => p.category === 'Saffron & Luxury Botanicals').length,
+      title: 'Regional Biryani & Curry Blends',
+      count: db.products.filter(p => p.category === 'Regional Biryani & Curry Blends').length,
       image: 'https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=600&q=80',
-      href: '/products?category=Saffron+%26+Luxury+Botanicals',
-      description: 'Grade A++ Pampore Mongra saffron and Bourbon Madagascar vanilla',
+      href: '/products?category=Regional+Biryani+%26+Curry+Blends',
+      description: 'Hyderabadi biryani, Andhra kodi kura & coastal seafood masalas',
+    },
+    {
+      title: 'Traditional South Indian Powders',
+      count: db.products.filter(p => p.category === 'Traditional South Indian Powders').length,
+      image: 'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=600&q=80',
+      href: '/products?category=Traditional+South+Indian+Powders',
+      description: 'Puliogare, gutti vankaya & bisi bele bhath heritage mixes',
     },
   ];
 
@@ -316,7 +316,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-xs font-bold uppercase tracking-widest text-spice-700">
-              The Zaffran & Clove Standard
+              The Anjali Spices Standard
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-stone-900 mt-2">
               Why Real Spices Smell, Look & Taste Different
@@ -377,7 +377,7 @@ export default async function HomePage() {
               Receive 15% Off Your First Harvest
             </h3>
             <p className="text-stone-300 text-xs sm:text-sm leading-relaxed">
-              Use promo code <span className="bg-spice-800 text-saffron-300 font-mono font-bold px-2 py-0.5 rounded border border-saffron-400/30">SPICE15</span> at checkout. Subscribe to receive first access to rare saffron micro-lots and heirloom harvests.
+              Use promo code <span className="bg-spice-800 text-saffron-300 font-mono font-bold px-2 py-0.5 rounded border border-saffron-400/30">ANJALI15</span> at checkout. Subscribe to receive first access to rare saffron micro-lots and heirloom harvests.
             </p>
             <div className="pt-2 flex flex-col sm:flex-row gap-2 justify-center max-w-md mx-auto">
               <input

@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import os from 'os';
 import bcrypt from 'bcryptjs';
 import { 
   User, 
@@ -21,8 +22,29 @@ interface DatabaseSchema {
   settings: StoreSettings;
 }
 
-const DATA_DIR = path.join(process.cwd(), 'data');
+/**
+ * Resolve a writable directory for the JSON store.
+ *
+ * - Local development / self-hosting: `<project>/data` (persists across restarts).
+ * - Vercel (and similar serverless platforms): the deployment filesystem is
+ *   read-only, so we use the per-instance `/tmp` directory. Note that `/tmp` is
+ *   ephemeral and not shared between lambda instances — for durable multi-instance
+ *   storage set DATA_DIR to a mounted volume or replace this adapter with a real DB.
+ * - DATA_DIR can always be set explicitly to a writable path.
+ */
+function resolveDataDir(): string {
+  if (process.env.DATA_DIR) return path.resolve(process.env.DATA_DIR);
+  if (process.env.VERCEL) return path.join(os.tmpdir(), 'anjali-spices-data');
+  return path.join(process.cwd(), 'data');
+}
+
+const DATA_DIR = resolveDataDir();
 const DB_FILE = path.join(DATA_DIR, 'store.json');
+
+// Keep the seeded database in memory as a fallback for read-only filesystems.
+const MEMORY_DB_KEY = '__anjali_spices_db__';
+type GlobalWithDb = typeof globalThis & { [MEMORY_DB_KEY]?: DatabaseSchema };
+const globalWithDb = globalThis as GlobalWithDb;
 
 // Store Settings for Anjali Spices (in the style of Priya Foods)
 const initialSettings: StoreSettings = {
@@ -882,76 +904,97 @@ const initialAuditLogs: AuditLog[] = [
   }
 ];
 
-// Helper to load or initialize DB
-export function getDb(): DatabaseSchema {
+const clone = <T>(value: T): T => JSON.parse(JSON.stringify(value)) as T;
+
+// Build a brand-new database from the seeded demo data.
+export function createInitialDb(): DatabaseSchema {
+  return {
+    users: createInitialUsers(),
+    products: clone(initialProducts),
+    orders: clone(initialOrders),
+    reviews: clone(initialReviews),
+    coupons: clone(initialCoupons),
+    auditLogs: clone(initialAuditLogs),
+    settings: clone(initialSettings),
+  };
+}
+
+function normalizeDb(value: unknown): DatabaseSchema | null {
+  if (!value || typeof value !== 'object') return null;
+
+  const data = value as Partial<DatabaseSchema>;
+  if (!Array.isArray(data.users) || !Array.isArray(data.products)) return null;
+
+  return {
+    users: data.users,
+    products: data.products,
+    orders: Array.isArray(data.orders) ? data.orders : [],
+    reviews: Array.isArray(data.reviews) ? data.reviews : [],
+    coupons: Array.isArray(data.coupons) ? data.coupons : [],
+    auditLogs: Array.isArray(data.auditLogs) ? data.auditLogs : [],
+    settings: { ...initialSettings, ...(data.settings ?? {}) },
+  };
+}
+
+function loadDbFromDisk(): DatabaseSchema | null {
   try {
-    if (!fs.existsSync(DATA_DIR)) {
-      fs.mkdirSync(DATA_DIR, { recursive: true });
-    }
-
-    if (!fs.existsSync(DB_FILE)) {
-      const initialDb: DatabaseSchema = {
-        users: createInitialUsers(),
-        products: initialProducts,
-        orders: initialOrders,
-        reviews: initialReviews,
-        coupons: initialCoupons,
-        auditLogs: initialAuditLogs,
-        settings: initialSettings,
-      };
-      fs.writeFileSync(DB_FILE, JSON.stringify(initialDb, null, 2), 'utf-8');
-      return initialDb;
-    }
-
-    const data = fs.readFileSync(DB_FILE, 'utf-8');
-    return JSON.parse(data);
+    if (!fs.existsSync(DB_FILE)) return null;
+    const raw = fs.readFileSync(DB_FILE, 'utf-8');
+    return normalizeDb(JSON.parse(raw));
   } catch (err) {
     console.error('Error reading database file:', err);
-    return {
-      users: createInitialUsers(),
-      products: initialProducts,
-      orders: initialOrders,
-      reviews: initialReviews,
-      coupons: initialCoupons,
-      auditLogs: initialAuditLogs,
-      settings: initialSettings,
-    };
+    return null;
   }
 }
 
-export function saveDb(db: DatabaseSchema): void {
+function persistDb(db: DatabaseSchema): void {
   try {
-    if (!fs.existsSync(DATA_DIR)) {
-      fs.mkdirSync(DATA_DIR, { recursive: true });
-    }
+    fs.mkdirSync(DATA_DIR, { recursive: true });
     fs.writeFileSync(DB_FILE, JSON.stringify(db, null, 2), 'utf-8');
   } catch (err) {
-    console.error('Error saving database file:', err);
+    // Read-only filesystem (e.g. a serverless deployment without /tmp access).
+    // Keep serving from the in-memory copy instead of failing the request.
+    console.error('Error saving database file, keeping changes in memory:', err);
   }
+}
+
+// Helper to load or initialize DB
+export function getDb(): DatabaseSchema {
+  if (globalWithDb[MEMORY_DB_KEY]) {
+    return globalWithDb[MEMORY_DB_KEY] as DatabaseSchema;
+  }
+
+  const db = loadDbFromDisk() ?? createInitialDb();
+  globalWithDb[MEMORY_DB_KEY] = db;
+
+  // Proactively create the store file when the filesystem is writable.
+  if (!fs.existsSync(DB_FILE)) {
+    persistDb(db);
+  }
+
+  return db;
+}
+
+export function saveDb(db: DatabaseSchema): void {
+  globalWithDb[MEMORY_DB_KEY] = db;
+  persistDb(db);
 }
 
 // Reset Database to clean state
 export function resetDb(): DatabaseSchema {
-  const freshDb: DatabaseSchema = {
-    users: createInitialUsers(),
-    products: initialProducts,
-    orders: initialOrders,
-    reviews: initialReviews,
-    coupons: initialCoupons,
-    auditLogs: [
-      ...initialAuditLogs,
-      {
-        id: `log-${Date.now()}`,
-        userId: 'usr-superadmin',
-        userName: 'Anjali Sharma',
-        userRole: 'SUPERADMIN',
-        action: 'DATABASE_RESET',
-        details: 'Store database was reset to pristine factory state with Anjali Spices datasets.',
-        createdAt: new Date().toISOString(),
-      }
-    ],
-    settings: initialSettings,
-  };
+  const freshDb = createInitialDb();
+  freshDb.auditLogs = [
+    ...freshDb.auditLogs,
+    {
+      id: `log-${Date.now()}`,
+      userId: 'usr-superadmin',
+      userName: 'Anjali Sharma',
+      userRole: 'SUPERADMIN',
+      action: 'DATABASE_RESET',
+      details: 'Store database was reset to pristine factory state with Anjali Spices datasets.',
+      createdAt: new Date().toISOString(),
+    },
+  ];
   saveDb(freshDb);
   return freshDb;
 }
