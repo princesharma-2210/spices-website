@@ -259,11 +259,11 @@ export default function ProductDetailPage() {
           <div className="bg-white rounded-2xl border border-stone-200/80 p-5 shadow-xs space-y-4">
             <div className="flex items-baseline gap-3">
               <span className="font-serif text-3xl font-bold text-stone-900">
-                ${(selectedVariant.price * quantity).toFixed(2)}
+                ₹{(selectedVariant.price * quantity).toFixed(0)}
               </span>
               {selectedVariant.originalPrice && (
                 <span className="text-sm text-stone-400 line-through">
-                  ${(selectedVariant.originalPrice * quantity).toFixed(2)}
+                  ₹{(selectedVariant.originalPrice * quantity).toFixed(0)}
                 </span>
               )}
               <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full">
@@ -288,7 +288,7 @@ export default function ProductDetailPage() {
                     }`}
                   >
                     <div className="font-bold text-xs">{v.weight}</div>
-                    <div className="text-[11px] opacity-80">${v.price.toFixed(2)}</div>
+                    <div className="text-[11px] opacity-80">₹{v.price.toFixed(0)}</div>
                   </button>
                 ))}
               </div>
@@ -331,7 +331,7 @@ export default function ProductDetailPage() {
                 ) : (
                   <>
                     <ShoppingBag className="w-4 h-4" />
-                    Add {quantity > 1 ? `${quantity} Jars` : ''} to Basket &bull; ${(selectedVariant.price * quantity).toFixed(2)}
+                    Add {quantity > 1 ? `${quantity} Packs` : ''} to Basket &bull; ₹{(selectedVariant.price * quantity).toFixed(0)}
                   </>
                 )}
               </button>

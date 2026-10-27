@@ -35,12 +35,11 @@ export interface ProductVariant {
 }
 
 export type SpiceCategory = 
-  | 'Whole Spices'
-  | 'Ground Spices'
-  | 'Blends & Masalas'
-  | 'Exotic & Single-Origin'
-  | 'Herbs & Seasonings'
-  | 'Saffron & Luxury Botanicals';
+  | 'Spices & Pure Powders'
+  | 'Authentic Masala Powders'
+  | 'Regional Biryani & Curry Blends'
+  | 'Traditional South Indian Powders'
+  | 'Whole Spices & Aromatics';
 
 export interface SpiceProduct {
   id: string;

@@ -48,7 +48,7 @@ export function CartDrawer() {
     }
   };
 
-  const amountNeededForFreeShipping = Math.max(0, 50 - (subtotal - discount));
+  const amountNeededForFreeShipping = Math.max(0, 499 - (subtotal - discount));
 
   return (
     <div className="fixed inset-0 z-50 overflow-hidden">
@@ -85,7 +85,7 @@ export function CartDrawer() {
                 {amountNeededForFreeShipping === 0 ? (
                   <span className="font-semibold text-emerald-800">You unlocked Free Express Shipping!</span>
                 ) : (
-                  <span>Add <strong className="text-saffron-800">${amountNeededForFreeShipping.toFixed(2)}</strong> more for Free Shipping</span>
+                  <span>Add <strong className="text-saffron-800">₹{amountNeededForFreeShipping.toFixed(0)}</strong> more for Free Shipping</span>
                 )}
               </span>
               <span className="text-stone-500 font-bold">{freeShippingProgress}%</span>
@@ -174,7 +174,7 @@ export function CartDrawer() {
 
                         {/* Price */}
                         <span className="font-serif font-bold text-stone-900 text-sm">
-                          ${(item.price * item.quantity).toFixed(2)}
+                          ₹{(item.price * item.quantity).toFixed(0)}
                         </span>
                       </div>
                     </div>
@@ -193,7 +193,7 @@ export function CartDrawer() {
                   <div className="flex items-center justify-between bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2 text-xs">
                     <span className="flex items-center gap-1.5 font-semibold text-emerald-800">
                       <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                      Promo Code: <strong className="tracking-wider">{couponCode}</strong> (-${discount.toFixed(2)})
+                      Promo Code: <strong className="tracking-wider">{couponCode}</strong> (-₹{discount.toFixed(0)})
                     </span>
                     <button
                       onClick={removeCoupon}
@@ -208,7 +208,7 @@ export function CartDrawer() {
                       <Tag className="w-3.5 h-3.5 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
                       <input
                         type="text"
-                        placeholder="Discount code (e.g. SPICE15)"
+                        placeholder="Discount code (e.g. ANJALI15)"
                         value={inputCoupon}
                         onChange={(e) => setInputCoupon(e.target.value)}
                         className="w-full pl-9 pr-3 py-2 border border-stone-200 rounded-xl text-xs uppercase focus:outline-none focus:ring-2 focus:ring-spice-700 bg-stone-50"
@@ -231,27 +231,27 @@ export function CartDrawer() {
               <div className="space-y-1.5 text-xs text-stone-600 pt-2 border-t border-stone-100">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span className="font-semibold text-stone-800">${subtotal.toFixed(2)}</span>
+                  <span className="font-semibold text-stone-800">₹{subtotal.toFixed(0)}</span>
                 </div>
                 {discount > 0 && (
                   <div className="flex justify-between text-emerald-700 font-medium">
                     <span>Discount</span>
-                    <span>-${discount.toFixed(2)}</span>
+                    <span>-₹{discount.toFixed(0)}</span>
                   </div>
                 )}
                 <div className="flex justify-between">
                   <span>Estimated Shipping</span>
                   <span className="font-semibold text-stone-800">
-                    {shippingFee === 0 ? <span className="text-emerald-700">FREE</span> : `$${shippingFee.toFixed(2)}`}
+                    {shippingFee === 0 ? <span className="text-emerald-700">FREE</span> : `₹${shippingFee.toFixed(0)}`}
                   </span>
                 </div>
                 <div className="flex justify-between">
                   <span>Estimated Tax (5%)</span>
-                  <span className="font-semibold text-stone-800">${tax.toFixed(2)}</span>
+                  <span className="font-semibold text-stone-800">₹{tax.toFixed(0)}</span>
                 </div>
                 <div className="flex justify-between text-base font-serif font-bold text-stone-900 pt-2 border-t border-stone-200">
                   <span>Total</span>
-                  <span>${total.toFixed(2)}</span>
+                  <span>₹{total.toFixed(0)}</span>
                 </div>
               </div>
 

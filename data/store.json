@@ -2,23 +2,23 @@
   "users": [
     {
       "id": "usr-superadmin",
-      "name": "Victoria Vance (Superadmin)",
-      "email": "superadmin@spices.com",
-      "password": "$2b$10$pXm.xbI/C37NPi9X8d2jd.gf.9ONDy5WQoHqe0pby5MM8hYqnkIki",
+      "name": "Anjali Sharma (Superadmin)",
+      "email": "superadmin@anjalispices.com",
+      "password": "$2b$10$LJgzI5wchLYYtVRsxH0N/.X2zcSQqmc5gH1pVYYU3dfZKt7b5kGDm",
       "role": "SUPERADMIN",
       "status": "ACTIVE",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
-      "phone": "+1 (555) 019-2834",
+      "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
+      "phone": "+91 98490 12345",
       "addresses": [
         {
           "id": "addr-super-1",
-          "fullName": "Victoria Vance",
-          "phone": "+1 (555) 019-2834",
-          "addressLine1": "742 Evergreen Botanical Way",
-          "city": "San Francisco",
-          "state": "CA",
-          "postalCode": "94107",
-          "country": "United States",
+          "fullName": "Anjali Sharma",
+          "phone": "+91 98490 12345",
+          "addressLine1": "Plot No. 42, Jubilee Hills, Road No. 36",
+          "city": "Hyderabad",
+          "state": "Telangana",
+          "postalCode": "500033",
+          "country": "India",
           "isDefault": true
         }
       ],
@@ -26,23 +26,23 @@
     },
     {
       "id": "usr-admin",
-      "name": "Marcus Sterling (Admin)",
-      "email": "admin@spices.com",
-      "password": "$2b$10$pXm.xbI/C37NPi9X8d2jd.4/rPvVhiHyE9LAQWVC3ORYBJLtGbbEW",
+      "name": "Ramesh Verma (Admin)",
+      "email": "admin@anjalispices.com",
+      "password": "$2b$10$LJgzI5wchLYYtVRsxH0N/.Zlv9yPUvc4jtLyQLf2aqncr8C5oeCNm",
       "role": "ADMIN",
       "status": "ACTIVE",
       "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
-      "phone": "+1 (555) 014-9922",
+      "phone": "+91 98850 67890",
       "addresses": [
         {
           "id": "addr-admin-1",
-          "fullName": "Marcus Sterling",
-          "phone": "+1 (555) 014-9922",
-          "addressLine1": "100 Spice Quarter Plaza",
-          "city": "Portland",
-          "state": "OR",
-          "postalCode": "97201",
-          "country": "United States",
+          "fullName": "Ramesh Verma",
+          "phone": "+91 98850 67890",
+          "addressLine1": "12 Spice Market Arcade, Somajiguda",
+          "city": "Hyderabad",
+          "state": "Telangana",
+          "postalCode": "500082",
+          "country": "India",
           "isDefault": true
         }
       ],
@@ -50,23 +50,23 @@
     },
     {
       "id": "usr-customer",
-      "name": "Elena Rostova (Customer)",
-      "email": "user@spices.com",
-      "password": "$2b$10$pXm.xbI/C37NPi9X8d2jd.qe4F4BWJy2M1E/3JPhqTaSNXKe0t6/2",
+      "name": "Priya Sundaram (Customer)",
+      "email": "user@anjalispices.com",
+      "password": "$2b$10$LJgzI5wchLYYtVRsxH0N/.BTkpYfaOt5THkDOi/stb8UB/qnrUN3C",
       "role": "USER",
       "status": "ACTIVE",
       "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
-      "phone": "+1 (555) 017-8392",
+      "phone": "+91 98200 45678",
       "addresses": [
         {
           "id": "addr-cust-1",
-          "fullName": "Elena Rostova",
-          "phone": "+1 (555) 017-8392",
-          "addressLine1": "348 Culinary Crescent, Apt 4B",
-          "city": "Seattle",
-          "state": "WA",
-          "postalCode": "98101",
-          "country": "United States",
+          "fullName": "Priya Sundaram",
+          "phone": "+91 98200 45678",
+          "addressLine1": "A-402, Kaveri Enclave, Indiranagar",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "postalCode": "560038",
+          "country": "India",
           "isDefault": true
         }
       ],
@@ -74,23 +74,23 @@
     },
     {
       "id": "usr-customer-2",
-      "name": "Devon Patel",
-      "email": "devon@example.com",
-      "password": "$2b$10$pXm.xbI/C37NPi9X8d2jd.1i2FNwgAowSfPEknfelv6iDPoJLQB16",
+      "name": "Rajesh Kulkarni",
+      "email": "rajesh@example.com",
+      "password": "$2b$10$LJgzI5wchLYYtVRsxH0N/.VWwAVSwf47xoMKoECespG7/XAcBi./K",
       "role": "USER",
       "status": "ACTIVE",
       "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
-      "phone": "+1 (555) 012-7711",
+      "phone": "+91 97110 33445",
       "addresses": [
         {
           "id": "addr-cust-2",
-          "fullName": "Devon Patel",
-          "phone": "+1 (555) 012-7711",
-          "addressLine1": "89 Masala Lane",
-          "city": "Chicago",
-          "state": "IL",
-          "postalCode": "60611",
-          "country": "United States",
+          "fullName": "Rajesh Kulkarni",
+          "phone": "+91 97110 33445",
+          "addressLine1": "Flat 12, Deccan Heights, Kothrud",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "postalCode": "411038",
+          "country": "India",
           "isDefault": true
         }
       ],
@@ -100,855 +100,972 @@
   "products": [
     {
       "id": "prod-1",
-      "name": "Royal Kashmiri Mongra Saffron",
-      "slug": "royal-kashmiri-mongra-saffron",
-      "category": "Saffron & Luxury Botanicals",
-      "tagline": "Grade A++ Purest Crocus Sativus Stigmas from Pampore Plateau",
-      "description": "Harvested entirely by hand during the crisp dawn frost of Kashmir, our Mongra grade saffron features intensely deep crimson threads with zero floral yellow waste. Imparts an ethereal golden liquor, profound bittersweet floral aroma, and unmatched culinary fragrance.",
-      "origin": "Pampore Plateau, Kashmir",
+      "name": "Anjali Premium Chilli Powder",
+      "slug": "anjali-premium-chilli-powder",
+      "category": "Spices & Pure Powders",
+      "tagline": "Hand-Picked Sun-Dried Guntur Chillies with Natural Red Luster",
+      "description": "Prepared from prime harvest Guntur red chillies known for their rich natural capsaicin and vibrant scarlet color. Slow stone-milled with utmost traditional hygiene to retain the natural oils and authentic sharp pungency without any added artificial colors or preservatives.",
+      "origin": "Guntur, Andhra Pradesh",
       "originCountry": "India",
-      "heatLevel": 0,
-      "heatDescription": "None (Sweet, Floral, Honeyed warmth)",
+      "heatLevel": 3,
+      "heatDescription": "Hot & Sharp (Rich Guntur Heat)",
       "aromaNotes": [
-        "Floral Honey",
-        "Warm Hay",
-        "Earthy Amber",
-        "Woody Velvet"
+        "Sun-Baked Clay",
+        "Ripe Pepper",
+        "Toasted Red Berry",
+        "Sharp Capsaicin"
       ],
       "culinaryUses": [
-        "Kashmiri Biryani",
-        "Saffron Milk / Kahwa",
-        "Persian Jeweled Rice",
-        "Spanish Paella",
-        "Fine Patisserie"
+        "Tadka Dals",
+        "Sambar & Rasam",
+        "Spicy Curries",
+        "Pickles & Chutneys",
+        "Tandoori Rubs"
       ],
-      "harvestYear": "2024 Fresh Autumn Harvest",
-      "organic": true,
-      "singleOrigin": true,
-      "isFeatured": true,
-      "isBestseller": true,
-      "rating": 4.95,
-      "reviewCount": 128,
-      "stock": 45,
-      "variants": [
-        {
-          "weight": "1g",
-          "price": 18,
-          "stock": 45
-        },
-        {
-          "weight": "2g",
-          "price": 34,
-          "originalPrice": 36,
-          "stock": 30
-        },
-        {
-          "weight": "5g",
-          "price": 78,
-          "originalPrice": 90,
-          "stock": 20
-        },
-        {
-          "weight": "10g",
-          "price": 145,
-          "originalPrice": 180,
-          "stock": 12
-        }
-      ],
-      "images": [
-        "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80"
-      ],
-      "createdAt": "2026-10-26T18:38:07.516Z"
-    },
-    {
-      "id": "prod-2",
-      "name": "Tellicherry Garbled Extra Bold Black Peppercorns (TGSEB)",
-      "slug": "tellicherry-garbled-extra-bold-black-peppercorns",
-      "category": "Whole Spices",
-      "tagline": "Sun-Ripened Jumbo Berries with Intense Citrus & Cedar Finish",
-      "description": "The indisputable king of black peppers. Grown on the misty hillsides of the Malabar Coast, only the largest, fully matured 4.75mm berries earn the TGSEB classification. Unlocks a rich complexity of bright citrus oils, warm cedarwood, and deep biting heat.",
-      "origin": "Wayanad, Malabar Coast",
-      "originCountry": "India",
-      "heatLevel": 2,
-      "heatDescription": "Medium Heat (Pungent, Piperine-rich bite)",
-      "aromaNotes": [
-        "Zesty Citrus",
-        "Cedarwood",
-        "Dark Plum",
-        "Cracked Pine"
-      ],
-      "culinaryUses": [
-        "Steak au Poivre",
-        "Cacio e Pepe",
-        "Slow-Braised Broths",
-        "Charcuterie Seasoning"
-      ],
-      "harvestYear": "2024 Winter Harvest",
+      "harvestYear": "2024 Fresh Harvest",
       "organic": true,
       "singleOrigin": true,
       "isFeatured": true,
       "isBestseller": true,
       "rating": 4.9,
-      "reviewCount": 94,
-      "stock": 120,
-      "variants": [
-        {
-          "weight": "100g",
-          "price": 12.5,
-          "stock": 120
-        },
-        {
-          "weight": "250g",
-          "price": 26,
-          "originalPrice": 31,
-          "stock": 85
-        },
-        {
-          "weight": "500g",
-          "price": 48,
-          "originalPrice": 62,
-          "stock": 40
-        },
-        {
-          "weight": "1kg",
-          "price": 88,
-          "originalPrice": 125,
-          "stock": 15
-        }
-      ],
-      "images": [
-        "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=80"
-      ],
-      "createdAt": "2026-10-26T18:38:07.517Z"
-    },
-    {
-      "id": "prod-3",
-      "name": "Ceylon Alba Grade True Cinnamon Quills",
-      "slug": "ceylon-alba-grade-true-cinnamon-quills",
-      "category": "Whole Spices",
-      "tagline": "Ultra-Slender Hand-Rolled Layers of Sweet Delicate Bark",
-      "description": "Unlike rough, high-coumarin cassia, true Ceylon Cinnamon Alba grade is composed of pencil-thin, fragile paper-like layers hand-rolled by master peelers. Imparts delicate floral sweetness, refined warmth, and subtle citrus notes without bitterness.",
-      "origin": "Southern Province",
-      "originCountry": "Sri Lanka",
-      "heatLevel": 0,
-      "heatDescription": "None (Sweet, Gentle, Warm spice)",
-      "aromaNotes": [
-        "Floral Sweetness",
-        "Clove Undertones",
-        "Citrus Blossom",
-        "Warm Bark"
-      ],
-      "culinaryUses": [
-        "Mexican Hot Chocolate",
-        "Spiced Cider",
-        "Biryani Pulao",
-        "Cinnamon Rolls",
-        "Curry Infusion"
-      ],
-      "harvestYear": "2024 Monsoon Harvest",
-      "organic": true,
-      "singleOrigin": true,
-      "isFeatured": true,
-      "isBestseller": false,
-      "rating": 4.88,
-      "reviewCount": 67,
-      "stock": 65,
-      "variants": [
-        {
-          "weight": "50g",
-          "price": 14,
-          "stock": 65
-        },
-        {
-          "weight": "100g",
-          "price": 24,
-          "originalPrice": 28,
-          "stock": 45
-        },
-        {
-          "weight": "250g",
-          "price": 54,
-          "originalPrice": 70,
-          "stock": 25
-        }
-      ],
-      "images": [
-        "https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80"
-      ],
-      "createdAt": "2026-10-26T18:38:07.517Z"
-    },
-    {
-      "id": "prod-4",
-      "name": "Alleppey Super Bold Green Cardamom (8mm+)",
-      "slug": "alleppey-super-bold-green-cardamom",
-      "category": "Whole Spices",
-      "tagline": "High Essential-Oil Plump Pods with Camphoric Eucalyptus Elegance",
-      "description": "Cardamom pods of supreme 8mm+ caliber shade-cured to lock in their emerald-green hue and explosive volatile essential oils. Crisp pod walls crack open to reveal glistening obsidian seeds with menthol, camphor, and floral citrus punch.",
-      "origin": "Idukki Hills, Kerala",
-      "originCountry": "India",
-      "heatLevel": 1,
-      "heatDescription": "Mild (Cool camphoric tingling warmth)",
-      "aromaNotes": [
-        "Eucalyptus",
-        "Sweet Menthol",
-        "Pine Needles",
-        "Orange Peel"
-      ],
-      "culinaryUses": [
-        "Masala Chai",
-        "Cardamom Buns (Kardemummabullar)",
-        "Pilafs",
-        "Mughlai Kormas",
-        "Nordic Baking"
-      ],
-      "harvestYear": "2024 Fresh Crop",
-      "organic": true,
-      "singleOrigin": true,
-      "isFeatured": true,
-      "isBestseller": true,
-      "rating": 4.92,
-      "reviewCount": 83,
-      "stock": 75,
-      "variants": [
-        {
-          "weight": "50g",
-          "price": 16,
-          "stock": 75
-        },
-        {
-          "weight": "100g",
-          "price": 29,
-          "originalPrice": 32,
-          "stock": 50
-        },
-        {
-          "weight": "250g",
-          "price": 68,
-          "originalPrice": 80,
-          "stock": 25
-        }
-      ],
-      "images": [
-        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80"
-      ],
-      "createdAt": "2026-10-26T18:38:07.517Z"
-    },
-    {
-      "id": "prod-5",
-      "name": "Vibrant Kashmiri Mirch Whole Pods & Powder",
-      "slug": "vibrant-kashmiri-mirch",
-      "category": "Ground Spices",
-      "tagline": "Deep Ruby Luster with Silky Gentle Warmth & Smoky Sweetness",
-      "description": "Renowned throughout world gastronomy for imparting a legendary deep crimson luster to gravies without scorchingly high Scoville heat. Our Kashmiri chillies are sun-dried and slow stone-ground to preserve the natural capsaicin and essential carotenoids.",
-      "origin": "Kashmir Valley",
-      "originCountry": "India",
-      "heatLevel": 1,
-      "heatDescription": "Gentle Mild Warmth (1,000 - 2,000 SHU)",
-      "aromaNotes": [
-        "Sun-dried Tomato",
-        "Smoky Raisin",
-        "Sweet Paprika",
-        "Leather"
-      ],
-      "culinaryUses": [
-        "Rogan Josh",
-        "Butter Chicken / Paneer Makhani",
-        "Tandoori Marinades",
-        "Chili Oil"
-      ],
-      "harvestYear": "2024 Autumn Harvest",
-      "organic": true,
-      "singleOrigin": true,
-      "isFeatured": false,
-      "isBestseller": true,
-      "rating": 4.87,
-      "reviewCount": 110,
+      "reviewCount": 312,
       "stock": 140,
       "variants": [
         {
-          "weight": "100g Powder",
-          "price": 9.5,
+          "weight": "100g",
+          "price": 50,
           "stock": 140
         },
         {
-          "weight": "250g Powder",
-          "price": 19,
-          "originalPrice": 23,
-          "stock": 90
+          "weight": "200g",
+          "price": 100,
+          "originalPrice": 110,
+          "stock": 95
         },
         {
-          "weight": "100g Whole Pods",
-          "price": 11,
-          "stock": 60
-        },
-        {
-          "weight": "500g Powder",
-          "price": 34,
-          "originalPrice": 47,
-          "stock": 35
+          "weight": "500g",
+          "price": 275,
+          "originalPrice": 300,
+          "stock": 45
         }
       ],
       "images": [
-        "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80"
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/CHILLI_1.jpg?v=1702640021",
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/CHILLI_4.jpg?v=1702640022"
       ],
-      "createdAt": "2026-10-26T18:38:07.517Z"
+      "createdAt": "2026-10-26T19:11:48.017Z"
     },
     {
-      "id": "prod-6",
-      "name": "17-Spice Heirloom Royal Garam Masala",
-      "slug": "17-spice-heirloom-royal-garam-masala",
-      "category": "Blends & Masalas",
-      "tagline": "Slow-Roasted Whole Botanicals Stone-Milled in Small Batches",
-      "description": "An aristocratic secret formula combining black cumin, mace blades, green & black cardamoms, star anise, nutmeg, stone flower (dagad phool), and rose petals. Gentle gentle dry-roasting awakens aromatic oils before low-temperature granite milling.",
-      "origin": "Old Delhi Heritage Recipe",
+      "id": "prod-2",
+      "name": "Anjali Turmeric (Haldi) Powder",
+      "slug": "anjali-turmeric-haldi-powder",
+      "category": "Spices & Pure Powders",
+      "tagline": "High-Curcumin Golden Rhizomes from the Heritage Farms of Erode",
+      "description": "Sourced from the prime turmeric producing lands of Erode, Tamil Nadu. Carefully steamed, sun-dried, and micro-pulverized to preserve the natural curcumin content. Gives your food the rich, auspicious golden yellow color and unmatched immunity-boosting goodness.",
+      "origin": "Erode, Tamil Nadu",
       "originCountry": "India",
-      "heatLevel": 2,
-      "heatDescription": "Warm & Fragrant (Medium Complexity)",
+      "heatLevel": 0,
+      "heatDescription": "Zero Heat (Earthy & Healing Golden Warmth)",
       "aromaNotes": [
-        "Nutmeg & Mace",
-        "Rose Petals",
-        "Toasted Coriander",
-        "Smoked Clove"
+        "Fresh Earth",
+        "Warm Ginger",
+        "Mustard Flower",
+        "Golden Meadow"
       ],
       "culinaryUses": [
-        "Finishing Dash on Curries",
-        "Lentil Dals",
-        "Roasted Vegetables",
-        "Lamb Tagines"
+        "Golden Milk (Haldi Doodh)",
+        "Daily Sabzis",
+        "Biryanis",
+        "South Indian Rasam",
+        "Ayurvedic Elixirs"
       ],
-      "harvestYear": "2024 Freshly Blended Batch",
+      "harvestYear": "2024 Spring Crop",
+      "organic": true,
+      "singleOrigin": true,
+      "isFeatured": true,
+      "isBestseller": true,
+      "rating": 4.95,
+      "reviewCount": 420,
+      "stock": 160,
+      "variants": [
+        {
+          "weight": "100g",
+          "price": 34,
+          "stock": 160
+        },
+        {
+          "weight": "200g",
+          "price": 68,
+          "originalPrice": 75,
+          "stock": 110
+        },
+        {
+          "weight": "500g",
+          "price": 170,
+          "originalPrice": 195,
+          "stock": 60
+        }
+      ],
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/TURMERIC_1.jpg?v=1702640061",
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/TURMERIC_4.jpg?v=1702640060"
+      ],
+      "createdAt": "2026-10-26T19:11:48.017Z"
+    },
+    {
+      "id": "prod-3",
+      "name": "Anjali Coriander (Dhania) Powder",
+      "slug": "anjali-coriander-dhania-powder",
+      "category": "Spices & Pure Powders",
+      "tagline": "Aromatic Green Seed Harvest Roasted for Sweet Citrus Resonance",
+      "description": "Ground from the plumpest coriander seeds of Kota and Ramganj Mandi. Lightly toasted on heavy iron griddles to awaken the essential linalool oils before cold granite pulverizing. Adds rich natural body, velvety gravy texture, and a heavenly citrusy floral aroma.",
+      "origin": "Kota, Rajasthan",
+      "originCountry": "India",
+      "heatLevel": 0,
+      "heatDescription": "Zero Heat (Citrusy Floral Herbaceous)",
+      "aromaNotes": [
+        "Sweet Lemon Peel",
+        "Toasted Sage",
+        "Pine Needle",
+        "Floral Green Earth"
+      ],
+      "culinaryUses": [
+        "Gravy Curries",
+        "Korma Bases",
+        "Dry Bhindi & Aloo Sabzi",
+        "Poha Seasoning",
+        "Chutneys"
+      ],
+      "harvestYear": "2024 Fresh Harvest",
+      "organic": true,
+      "singleOrigin": true,
+      "isFeatured": true,
+      "isBestseller": true,
+      "rating": 4.88,
+      "reviewCount": 185,
+      "stock": 125,
+      "variants": [
+        {
+          "weight": "100g (Pack of 2)",
+          "price": 70,
+          "stock": 125
+        },
+        {
+          "weight": "500g",
+          "price": 175,
+          "originalPrice": 199,
+          "stock": 70
+        }
+      ],
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/CORIANDER_1_2d52780f-33db-47b2-a06c-e9f30a1eae1a.jpg?v=1724839536",
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/CORIANDER_4_96367254-f5e1-4552-a56d-ff6ce272d969.jpg?v=1724839536"
+      ],
+      "createdAt": "2026-10-26T19:11:48.017Z"
+    },
+    {
+      "id": "prod-4",
+      "name": "Anjali Curry Chilli Powder (Kura Karam)",
+      "slug": "anjali-curry-chilli-powder-kura-karam",
+      "category": "Spices & Pure Powders",
+      "tagline": "The Legendary Andhra Kitchen Secret Blend of Garlic, Cumin & Chillies",
+      "description": "The soul of Telugu home cooking. Kura Karam is a beloved heirloom blend of premium sun-dried chillies, toasted cumin, garlic cloves, coriander, and curry leaves. Just add one spoonful directly to dry vegetable fries (Vepudu) or curries for instant grandmother-style flavor.",
+      "origin": "Andhra Pradesh Heritage",
+      "originCountry": "India",
+      "heatLevel": 3,
+      "heatDescription": "Spicy & Savory (Garlic & Cumin Kick)",
+      "aromaNotes": [
+        "Roasted Garlic",
+        "Cumin Snap",
+        "Toasted Chilli",
+        "Curry Leaf Essence"
+      ],
+      "culinaryUses": [
+        "Aloo Vepudu (Potato Fry)",
+        "Bendakaya Vepudu (Okra Fry)",
+        "Dondakaya Fry",
+        "Egg Curry",
+        "Paratha Seasoning"
+      ],
+      "harvestYear": "2024 Fresh Batch",
       "organic": true,
       "singleOrigin": false,
       "isFeatured": true,
       "isBestseller": true,
       "rating": 4.96,
-      "reviewCount": 154,
-      "stock": 95,
-      "variants": [
-        {
-          "weight": "100g Jar",
-          "price": 13.5,
-          "stock": 95
-        },
-        {
-          "weight": "250g Pouch",
-          "price": 28,
-          "originalPrice": 34,
-          "stock": 60
-        },
-        {
-          "weight": "500g Pouch",
-          "price": 50,
-          "originalPrice": 68,
-          "stock": 30
-        }
-      ],
-      "images": [
-        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=80"
-      ],
-      "createdAt": "2026-10-26T18:38:07.517Z"
-    },
-    {
-      "id": "prod-7",
-      "name": "Golden Lakadong Turmeric (7.5%+ Curcumin)",
-      "slug": "golden-lakadong-turmeric",
-      "category": "Ground Spices",
-      "tagline": "High-Potency Therapeutic Gold from the Jaintia Hills of Meghalaya",
-      "description": "While commercial turmeric contains a mere 2-3% curcumin, our wild-grown Lakadong variety delivers an astounding 7.5% to 8.2% natural active curcumin. Possesses an intoxicating earthy scent, vibrant luminous saffron glow, and potent antioxidant qualities.",
-      "origin": "Jaintia Hills, Meghalaya",
-      "originCountry": "India",
-      "heatLevel": 0,
-      "heatDescription": "None (Earthy, Warm, Pungent)",
-      "aromaNotes": [
-        "Fresh Earth",
-        "Warm Ginger",
-        "Peppery Undertone",
-        "Golden Meadow"
-      ],
-      "culinaryUses": [
-        "Ayurvedic Golden Milk",
-        "Slow Curries",
-        "Turmeric Lattes",
-        "Morning Elixirs",
-        "Rice Dyeing"
-      ],
-      "harvestYear": "2024 Hill Harvest",
-      "organic": true,
-      "singleOrigin": true,
-      "isFeatured": false,
-      "isBestseller": true,
-      "rating": 4.91,
-      "reviewCount": 88,
-      "stock": 110,
+      "reviewCount": 260,
+      "stock": 90,
       "variants": [
         {
           "weight": "100g",
-          "price": 11,
-          "stock": 110
+          "price": 65,
+          "stock": 90
         },
         {
           "weight": "250g",
-          "price": 23,
-          "originalPrice": 27.5,
-          "stock": 75
+          "price": 155,
+          "originalPrice": 175,
+          "stock": 65
         },
         {
           "weight": "500g",
-          "price": 42,
-          "originalPrice": 55,
+          "price": 300,
+          "originalPrice": 340,
           "stock": 40
         }
       ],
       "images": [
-        "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80"
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/KuraKaram100gfront.jpg?v=1788238300",
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/KuraKaram100gback.jpg?v=1788238300"
       ],
-      "createdAt": "2026-10-26T18:38:07.517Z"
+      "createdAt": "2026-10-26T19:11:48.017Z"
     },
     {
-      "id": "prod-8",
-      "name": "Smoked Pimentón de la Vera (D.O.P Dulce)",
-      "slug": "smoked-pimenton-de-la-vera",
-      "category": "Ground Spices",
-      "tagline": "Oak-Wood Smoked Paprika with Protected Spanish Denomination of Origin",
-      "description": "Slowly smoked over smoldering Holm oak wood fires for 15 days in Extremadura, Spain, then stone ground on monumental millstones. Delivers a profound, savory woodsmoke perfume that elevates meats, stews, roasted potatoes, and hummus.",
-      "origin": "La Vera, Extremadura",
-      "originCountry": "Spain",
-      "heatLevel": 1,
-      "heatDescription": "Mildly Warm (Deep Oak Smoke)",
+      "id": "prod-5",
+      "name": "Anjali Premium Sambar Powder",
+      "slug": "anjali-premium-sambar-powder",
+      "category": "Authentic Masala Powders",
+      "tagline": "Authentic South Indian Temple-Style Recipe with Roasted Lentils & Asafoetida",
+      "description": "Crafted according to time-honored South Indian traditions. Combines slow-roasted toor dal, chana dal, coriander, fenugreek, red chillies, black pepper, and premium compounded asafoetida. Imparts irresistible aroma, golden thickness, and classic temple-feast flavor to your sambar.",
+      "origin": "Thanjavur, Tamil Nadu",
+      "originCountry": "India",
+      "heatLevel": 2,
+      "heatDescription": "Medium (Aromatic, Tangy Lentil Warmth)",
       "aromaNotes": [
-        "Holm Oak Woodsmoke",
-        "Caramelized Pepper",
-        "Sweet Ash",
-        "Earthy Red Berry"
+        "Fenugreek Herb",
+        "Roasted Lentils",
+        "Asafoetida Zing",
+        "Curry Leaves"
       ],
       "culinaryUses": [
-        "Spanish Paella",
-        "Patatas Bravas",
-        "Dry Meat Rubs",
-        "Romesco Sauce",
-        "Shakshuka"
+        "Drumstick Sambar",
+        "Idli-Dosa Dip",
+        "Mixed Vegetable Sambar",
+        "Mini Idli Bowl"
       ],
-      "harvestYear": "2024 D.O.P Certified",
-      "organic": true,
-      "singleOrigin": true,
-      "isFeatured": true,
-      "isBestseller": false,
-      "rating": 4.89,
-      "reviewCount": 47,
-      "stock": 80,
-      "variants": [
-        {
-          "weight": "75g Tin",
-          "price": 10.5,
-          "stock": 80
-        },
-        {
-          "weight": "150g Tin",
-          "price": 18.5,
-          "originalPrice": 21,
-          "stock": 55
-        },
-        {
-          "weight": "500g Bag",
-          "price": 38,
-          "originalPrice": 52,
-          "stock": 25
-        }
-      ],
-      "images": [
-        "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=80"
-      ],
-      "createdAt": "2026-10-26T18:38:07.517Z"
-    },
-    {
-      "id": "prod-9",
-      "name": "Madagascar Bourbon Gourmet Vanilla Beans (Grade A)",
-      "slug": "madagascar-bourbon-gourmet-vanilla-beans",
-      "category": "Saffron & Luxury Botanicals",
-      "tagline": "Supple 18cm Plump Pods Overflowing with Caviar Seeds",
-      "description": "Sun-cured and traditionally conditioned in the Sava region of Madagascar. These prime Grade-A black pods boast a luxurious 33%+ moisture content, making them soft, oily, and pliable, packed with millions of aromatic vanillin caviar seeds.",
-      "origin": "Sava Region",
-      "originCountry": "Madagascar",
-      "heatLevel": 0,
-      "heatDescription": "None (Decadent, Sweet, Creamy balsam)",
-      "aromaNotes": [
-        "Creamy Vanillin",
-        "Dark Marshmallow",
-        "Bourbon Oak",
-        "Fig"
-      ],
-      "culinaryUses": [
-        "Crème Brûlée",
-        "Homemade Ice Cream",
-        "Pastry Creams",
-        "Artisan Extracts",
-        "Infused Sugar"
-      ],
-      "harvestYear": "2024 Sun Cured",
-      "organic": true,
-      "singleOrigin": true,
-      "isFeatured": true,
-      "isBestseller": true,
-      "rating": 4.97,
-      "reviewCount": 76,
-      "stock": 50,
-      "variants": [
-        {
-          "weight": "3 Pods (approx 12g)",
-          "price": 19.5,
-          "stock": 50
-        },
-        {
-          "weight": "5 Pods (approx 20g)",
-          "price": 31,
-          "originalPrice": 35,
-          "stock": 35
-        },
-        {
-          "weight": "10 Pods (approx 40g)",
-          "price": 58,
-          "originalPrice": 70,
-          "stock": 20
-        }
-      ],
-      "images": [
-        "https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80"
-      ],
-      "createdAt": "2026-10-26T18:38:07.517Z"
-    },
-    {
-      "id": "prod-10",
-      "name": "Royal Za'atar Artisan Levantine Blend",
-      "slug": "royal-zaatar-artisan-levantine-blend",
-      "category": "Herbs & Seasonings",
-      "tagline": "Wild Mount Lebanon Hyssop Thyme, Tangy Crimson Sumac & Nutty Sesame",
-      "description": "An ancient breakfast staple and culinary marvel. Wild mountain thyme (hyssop) hand-picked on rocky Mediterranean slopes, tossed with tart sun-dried sumac berries, toasted golden sesame seeds, and sea salt flakes.",
-      "origin": "Mount Lebanon",
-      "originCountry": "Lebanon",
-      "heatLevel": 0,
-      "heatDescription": "None (Tangy, Herbal, Nutty)",
-      "aromaNotes": [
-        "Wild Thyme Herbaceous",
-        "Tart Citrus Berry",
-        "Toasted Sesame Nutty",
-        "Sea Breeze"
-      ],
-      "culinaryUses": [
-        "Olive Oil Dip with Warm Pita",
-        "Roasted Chicken",
-        "Labneh & Feta Drizzle",
-        "Flatbread Topping"
-      ],
-      "harvestYear": "2024 Mountain Harvest",
+      "harvestYear": "2024 Fresh Blend",
       "organic": true,
       "singleOrigin": false,
-      "isFeatured": false,
+      "isFeatured": true,
       "isBestseller": true,
-      "rating": 4.86,
-      "reviewCount": 52,
-      "stock": 90,
-      "variants": [
-        {
-          "weight": "100g Jar",
-          "price": 11.5,
-          "stock": 90
-        },
-        {
-          "weight": "250g Pouch",
-          "price": 23,
-          "originalPrice": 28,
-          "stock": 65
-        },
-        {
-          "weight": "500g Bag",
-          "price": 42,
-          "originalPrice": 56,
-          "stock": 30
-        }
-      ],
-      "images": [
-        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=800&q=80"
-      ],
-      "createdAt": "2026-10-26T18:38:07.517Z"
-    },
-    {
-      "id": "prod-11",
-      "name": "Wild Mountain Cumin Seeds (Royal Jeera)",
-      "slug": "wild-mountain-cumin-seeds",
-      "category": "Whole Spices",
-      "tagline": "High-Eugenol Slender Grey Seeds with Earthy, Piney Resonance",
-      "description": "Harvested from drought-resistant heritage shrubs in the arid mineral soils of Nagaur, Rajasthan. Smaller and more intensely ribbed than standard commercial cumin, providing a clean, crackling snap when bloomed in hot ghee.",
-      "origin": "Nagaur, Rajasthan",
-      "originCountry": "India",
-      "heatLevel": 1,
-      "heatDescription": "Mild Warmth (Toasty, Piney snap)",
-      "aromaNotes": [
-        "Toasted Pine",
-        "Warm Clay",
-        "Peppery Smoke",
-        "Zesty Grass"
-      ],
-      "culinaryUses": [
-        "Tarka Tempered Lentils",
-        "Mexican Chili Con Carne",
-        "Jeera Rice",
-        "Falafel Seasoning"
-      ],
-      "harvestYear": "2024 Desert Harvest",
-      "organic": true,
-      "singleOrigin": true,
-      "isFeatured": false,
-      "isBestseller": false,
-      "rating": 4.84,
-      "reviewCount": 39,
-      "stock": 130,
+      "rating": 4.92,
+      "reviewCount": 380,
+      "stock": 150,
       "variants": [
         {
           "weight": "100g",
-          "price": 7.5,
-          "stock": 130
+          "price": 60,
+          "stock": 150
         },
         {
-          "weight": "250g",
-          "price": 15,
-          "originalPrice": 18.75,
-          "stock": 90
+          "weight": "200g",
+          "price": 115,
+          "originalPrice": 125,
+          "stock": 95
         },
         {
           "weight": "500g",
-          "price": 26,
-          "originalPrice": 37.5,
+          "price": 265,
+          "originalPrice": 300,
+          "stock": 50
+        }
+      ],
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/products/100gPremiumSambarFront_d90cf11c-6f66-42c5-8d23-6931bbe032fe.jpg?v=1666430990",
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/products/100gPremiumSambarBack_b04fd343-2faf-4162-aa97-2b2670367628.jpg?v=1666430990"
+      ],
+      "createdAt": "2026-10-26T19:11:48.017Z"
+    },
+    {
+      "id": "prod-6",
+      "name": "Anjali Premium Rasam Powder",
+      "slug": "anjali-premium-rasam-powder",
+      "category": "Authentic Masala Powders",
+      "tagline": "Coarsely Ground Tellicherry Black Pepper & Cumin for Soul-Soothing Rasam",
+      "description": "Nothing heals the soul like a steaming bowl of hot pepper rasam. Anjali Premium Rasam Powder features the exact traditional proportion of crushed whole black peppercorns, cumin, coriander, and red chillies. Guarantees a fragrant, appetizing rasam that warms you from inside.",
+      "origin": "Mysore, Karnataka",
+      "originCountry": "India",
+      "heatLevel": 2,
+      "heatDescription": "Medium Peppery (Cumin & Black Pepper Bite)",
+      "aromaNotes": [
+        "Cracked Pepper",
+        "Toasted Jeera",
+        "Tamarind Harmony",
+        "Curry Leaf"
+      ],
+      "culinaryUses": [
+        "Tomato Rasam",
+        "Garlic Pepper Rasam",
+        "Lemon Rasam",
+        "Rasam Rice with Ghee",
+        "Warm Soup Sip"
+      ],
+      "harvestYear": "2024 Fresh Blend",
+      "organic": true,
+      "singleOrigin": false,
+      "isFeatured": true,
+      "isBestseller": true,
+      "rating": 4.94,
+      "reviewCount": 290,
+      "stock": 110,
+      "variants": [
+        {
+          "weight": "100g",
+          "price": 60,
+          "stock": 110
+        },
+        {
+          "weight": "200g",
+          "price": 115,
+          "originalPrice": 130,
+          "stock": 80
+        }
+      ],
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/RASAMPOWDER_1.jpg?v=1703150391",
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/RASAMPOWDER_4.jpg?v=1703150391"
+      ],
+      "createdAt": "2026-10-26T19:11:48.017Z"
+    },
+    {
+      "id": "prod-7",
+      "name": "Anjali Traditional Garam Masala Powder",
+      "slug": "anjali-traditional-garam-masala-powder",
+      "category": "Authentic Masala Powders",
+      "tagline": "Royal Heirloom Blend of 12 Roasted Botanicals with Mace & Black Cardamom",
+      "description": "An aristocrat among masalas. Roasted in small batches and gently ground to protect the natural oils of black cardamom, cinnamon quills, cloves, star anise, nutmeg, and stone flower. Add just 1/2 teaspoon towards the end of cooking for deep royal culinary aroma.",
+      "origin": "Hyderabad & Delhi Heritage",
+      "originCountry": "India",
+      "heatLevel": 2,
+      "heatDescription": "Warm & Fragrant (Sweet Spice Complexity)",
+      "aromaNotes": [
+        "Nutmeg & Mace",
+        "Cinnamon Bark",
+        "Smoked Clove",
+        "Royal Caraway"
+      ],
+      "culinaryUses": [
+        "Paneer Makhani",
+        "Chicken Curry",
+        "Chole Masala",
+        "Mushroom Gravy",
+        "Mutton Rogan Josh"
+      ],
+      "harvestYear": "2024 Fresh Blend",
+      "organic": true,
+      "singleOrigin": false,
+      "isFeatured": true,
+      "isBestseller": true,
+      "rating": 4.91,
+      "reviewCount": 340,
+      "stock": 135,
+      "variants": [
+        {
+          "weight": "50g",
+          "price": 45,
+          "stock": 135
+        },
+        {
+          "weight": "100g",
+          "price": 80,
+          "originalPrice": 90,
+          "stock": 90
+        },
+        {
+          "weight": "200g",
+          "price": 150,
+          "originalPrice": 175,
+          "stock": 50
+        }
+      ],
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/GARAMMASALA_1.jpg?v=1705735292",
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/GARAMMASALA_3.jpg?v=1705735291"
+      ],
+      "createdAt": "2026-10-26T19:11:48.017Z"
+    },
+    {
+      "id": "prod-8",
+      "name": "Anjali Hyderabadi Chicken Biryani Masala",
+      "slug": "anjali-hyderabadi-chicken-biryani-masala",
+      "category": "Regional Biryani & Curry Blends",
+      "tagline": "Nizam-Style Dum Biryani Formula with Shahi Jeera, Mace & Green Cardamoms",
+      "description": "Replicate the magic of legendary Hyderabadi Dum Biryani in your own kitchen! Infused with whole royal shahi jeera, javitri (mace), black stone flower (dagad phool), green cardamom, and aromatic red chillies for an authentic restaurant-style aroma.",
+      "origin": "Old City, Hyderabad",
+      "originCountry": "India",
+      "heatLevel": 3,
+      "heatDescription": "Spicy & Royal (Authentic Dum Biryani Heat)",
+      "aromaNotes": [
+        "Shahi Jeera",
+        "Green Cardamom",
+        "Javitri Blades",
+        "Kashmiri Saffron Essence"
+      ],
+      "culinaryUses": [
+        "Hyderabadi Chicken Dum Biryani",
+        "Kolkata Biryani",
+        "Kushka Rice",
+        "Biryani Gravy (Salan)"
+      ],
+      "harvestYear": "2024 Fresh Batch",
+      "organic": true,
+      "singleOrigin": false,
+      "isFeatured": true,
+      "isBestseller": true,
+      "rating": 4.97,
+      "reviewCount": 512,
+      "stock": 170,
+      "variants": [
+        {
+          "weight": "50g",
+          "price": 50,
+          "stock": 170
+        },
+        {
+          "weight": "100g",
+          "price": 95,
+          "originalPrice": 110,
+          "stock": 120
+        },
+        {
+          "weight": "200g",
+          "price": 180,
+          "originalPrice": 210,
+          "stock": 65
+        }
+      ],
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/Hyderabadchickenbiryanimasalacopy.jpg?v=1788170152",
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/Hyderabadchickenbiryanimasala50g2.jpg?v=1788170151"
+      ],
+      "createdAt": "2026-10-26T19:11:48.017Z"
+    },
+    {
+      "id": "prod-9",
+      "name": "Anjali Hyderabadi Mutton Biryani Masala",
+      "slug": "anjali-hyderabadi-mutton-biryani-masala",
+      "category": "Regional Biryani & Curry Blends",
+      "tagline": "Deeply Fragrant Meat Tenderizing Blend for Succulent Royal Mutton Biryani",
+      "description": "Specifically crafted for succulent, fall-off-the-bone Mutton Dum Biryani. Combines dried raw papaya essence, nutmeg, star anise, black pepper, and cinnamon to tenderize meat while infusing intense aromatic notes into every long grain of basmati rice.",
+      "origin": "Hyderabad, Telangana",
+      "originCountry": "India",
+      "heatLevel": 3,
+      "heatDescription": "Hot & Robust (Meat Infused Rich Heat)",
+      "aromaNotes": [
+        "Nutmeg",
+        "Star Anise",
+        "Black Pepper",
+        "Toasted Coriander"
+      ],
+      "culinaryUses": [
+        "Hyderabadi Kachche Gosht ki Biryani",
+        "Mutton Pulao",
+        "Yakhni Biryani"
+      ],
+      "harvestYear": "2024 Fresh Batch",
+      "organic": true,
+      "singleOrigin": false,
+      "isFeatured": true,
+      "isBestseller": false,
+      "rating": 4.92,
+      "reviewCount": 198,
+      "stock": 85,
+      "variants": [
+        {
+          "weight": "50g",
+          "price": 50,
+          "stock": 85
+        },
+        {
+          "weight": "100g",
+          "price": 95,
+          "originalPrice": 110,
+          "stock": 60
+        }
+      ],
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/hyderabadmuttonbiryanimasala.jpg?v=1788170256",
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/hyderabadmuttonbiryanimasala50g2.jpg?v=1788170256"
+      ],
+      "createdAt": "2026-10-26T19:11:48.017Z"
+    },
+    {
+      "id": "prod-10",
+      "name": "Anjali Andhra Chicken Masala",
+      "slug": "anjali-andhra-chicken-masala",
+      "category": "Regional Biryani & Curry Blends",
+      "tagline": "Fiery Rayalaseema Style Kodi Kura Masala with Poppy Seeds & Guntur Mirch",
+      "description": "For lovers of authentic, fiery Andhra chicken curries! Blended with Guntur S4 chillies, khus-khus (poppy seeds), black pepper, cloves, and roasted cumin. Creates that iconic dark crimson, mouth-tingling Andhra chicken gravy beloved across South India.",
+      "origin": "Rayalaseema & Guntur",
+      "originCountry": "India",
+      "heatLevel": 4,
+      "heatDescription": "Fiery Hot (Assertive Andhra Kodi Kura Punch)",
+      "aromaNotes": [
+        "Roasted Pepper",
+        "Hot Chilli Oil",
+        "Poppy Seed Cream",
+        "Clove Zing"
+      ],
+      "culinaryUses": [
+        "Andhra Kodi Kura",
+        "Country Chicken (Natukodi) Curry",
+        "Chicken Sukka",
+        "Pepper Chicken"
+      ],
+      "harvestYear": "2024 Fresh Harvest",
+      "organic": true,
+      "singleOrigin": false,
+      "isFeatured": true,
+      "isBestseller": true,
+      "rating": 4.93,
+      "reviewCount": 310,
+      "stock": 120,
+      "variants": [
+        {
+          "weight": "50g",
+          "price": 50,
+          "stock": 120
+        },
+        {
+          "weight": "100g",
+          "price": 95,
+          "originalPrice": 110,
+          "stock": 85
+        },
+        {
+          "weight": "200g",
+          "price": 180,
+          "originalPrice": 215,
           "stock": 45
         }
       ],
       "images": [
-        "https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80"
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/AndhraChickenMasala100gFront.jpg?v=1788172902",
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/AndhraChickenMasala100gback.jpg?v=1788172902"
       ],
-      "createdAt": "2026-10-26T18:38:07.517Z"
+      "createdAt": "2026-10-26T19:11:48.017Z"
     },
     {
-      "id": "prod-12",
-      "name": "Guntur Sannam Sun-Dried Red Chillies (Fiery S4)",
-      "slug": "guntur-sannam-sun-dried-red-chillies",
-      "category": "Whole Spices",
-      "tagline": "The Legendary Fiery Crimson Pride of Andhra Pradesh",
-      "description": "For lovers of authentic tingling culinary fire. Sun-dried under the intense Deccan sun, Guntur Sannam chillies possess a radiant scarlet skin and deliver an assertive, lingering heat (35,000 to 45,000 Scoville units) accompanied by deep savory fruitiness.",
-      "origin": "Guntur, Andhra Pradesh",
+      "id": "prod-11",
+      "name": "Anjali Chicken 65 Masala",
+      "slug": "anjali-chicken-65-masala",
+      "category": "Regional Biryani & Curry Blends",
+      "tagline": "Crispy, Tangy, Garlic-Infused Chennai Starter Seasoning",
+      "description": "The indisputable king of South Indian appetizers! Anjali Chicken 65 Masala coats bone-in or boneless chicken pieces with an irresistible crimson crust, vibrant garlic flavor, fresh curry leaf tang, and crisp texture without needing extra colorants.",
+      "origin": "Chennai, Tamil Nadu",
       "originCountry": "India",
-      "heatLevel": 4,
-      "heatDescription": "Fiery Hot (35,000 - 45,000 SHU)",
+      "heatLevel": 3,
+      "heatDescription": "Spicy & Tangy (Crisp Barbecue Heat)",
       "aromaNotes": [
-        "Sun-Baked Clay",
-        "Dried Cherry",
-        "Pungent Smoke",
-        "Intense Capsaicin"
+        "Crispy Garlic",
+        "Curry Leaf Spice",
+        "Tangy Amchur",
+        "Red Capsicum"
       ],
       "culinaryUses": [
-        "Andhra Spicy Chicken",
-        "Szechuan Chili Crisps",
-        "Vindaloo Curry",
-        "Pickling"
+        "Chicken 65",
+        "Paneer 65",
+        "Gobi 65",
+        "Mushroom 65",
+        "Crispy Corn Starter"
       ],
-      "harvestYear": "2024 Fresh Harvest",
+      "harvestYear": "2024 Fresh Batch",
       "organic": true,
-      "singleOrigin": true,
+      "singleOrigin": false,
       "isFeatured": false,
-      "isBestseller": false,
-      "rating": 4.88,
-      "reviewCount": 61,
-      "stock": 85,
+      "isBestseller": true,
+      "rating": 4.89,
+      "reviewCount": 220,
+      "stock": 105,
       "variants": [
         {
-          "weight": "100g Whole",
-          "price": 8.5,
-          "stock": 85
+          "weight": "50g",
+          "price": 50,
+          "stock": 105
         },
         {
-          "weight": "250g Whole",
-          "price": 17.5,
-          "originalPrice": 21.25,
-          "stock": 55
-        },
-        {
-          "weight": "500g Whole",
-          "price": 30,
-          "originalPrice": 42.5,
-          "stock": 25
+          "weight": "100g",
+          "price": 95,
+          "originalPrice": 105,
+          "stock": 75
         }
       ],
       "images": [
-        "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80"
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/CHICKEN65MASALA.jpg?v=1788169259",
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/Chicken6550g3.jpg?v=1788169259"
       ],
-      "createdAt": "2026-10-26T18:38:07.517Z"
+      "createdAt": "2026-10-26T19:11:48.017Z"
+    },
+    {
+      "id": "prod-12",
+      "name": "Anjali Fish Fry Masala",
+      "slug": "anjali-fish-fry-masala",
+      "category": "Regional Biryani & Curry Blends",
+      "tagline": "Coastal Coromandel Seafood Rub with Ajwain, Kashmiri Chilli & Lemon Salt",
+      "description": "Crafted for coastal seafood purists. Features a delicious blend of Kashmiri chilli, carom seeds (ajwain), amchur, cumin, and dry ginger. Creates a tight, flavorful marinade that adheres to fish steaks and delivers a golden, crunchy crust when pan-tossed in oil.",
+      "origin": "Coastal Andhra & Coromandel",
+      "originCountry": "India",
+      "heatLevel": 3,
+      "heatDescription": "Spicy & Tangy Coastal Heat",
+      "aromaNotes": [
+        "Carom Seed Snap",
+        "Zesty Lemon Salt",
+        "Kashmiri Red Rub",
+        "Dry Ginger"
+      ],
+      "culinaryUses": [
+        "Vanjaram (Seer Fish) Fry",
+        "Pomfret Tawa Fry",
+        "Prawn Masala Fry",
+        "Squid Roast"
+      ],
+      "harvestYear": "2024 Coastal Batch",
+      "organic": true,
+      "singleOrigin": false,
+      "isFeatured": false,
+      "isBestseller": true,
+      "rating": 4.88,
+      "reviewCount": 165,
+      "stock": 95,
+      "variants": [
+        {
+          "weight": "50g",
+          "price": 40,
+          "stock": 95
+        },
+        {
+          "weight": "100g",
+          "price": 75,
+          "originalPrice": 85,
+          "stock": 65
+        }
+      ],
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/FISHFRYMASALA.jpg?v=1788169801",
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/Fishfrymasala50g5.jpg?v=1788169800"
+      ],
+      "createdAt": "2026-10-26T19:11:48.017Z"
+    },
+    {
+      "id": "prod-13",
+      "name": "Anjali Traditional Puliogare Powder (Tamarind Rice Mix)",
+      "slug": "anjali-traditional-puliogare-powder",
+      "category": "Traditional South Indian Powders",
+      "tagline": "Classic South Indian Temple-Style Pulihora with Roasted Sesame & Peanuts",
+      "description": "Recreate beloved temple-style Tamarind Rice (Puliogare/Pulihora) in minutes! Handcrafted with roasted white sesame, peanuts, chana dal, fenugreek, compounded hing, and sun-dried chillies. Mix with hot steamed rice and a spoonful of sesame oil for heavenly flavor.",
+      "origin": "Temple Tradition, South India",
+      "originCountry": "India",
+      "heatLevel": 1,
+      "heatDescription": "Gentle Warmth (Tangy, Nutty, Sesame Crunch)",
+      "aromaNotes": [
+        "Toasted Sesame",
+        "Crunchy Peanuts",
+        "Asafoetida",
+        "Red Chilli Snap"
+      ],
+      "culinaryUses": [
+        "Temple Puliogare Rice",
+        "Lunchbox Tamarind Rice",
+        "Festival Prasadam",
+        "Pulihora Sev"
+      ],
+      "harvestYear": "2024 Fresh Harvest",
+      "organic": true,
+      "singleOrigin": false,
+      "isFeatured": false,
+      "isBestseller": true,
+      "rating": 4.95,
+      "reviewCount": 240,
+      "stock": 130,
+      "variants": [
+        {
+          "weight": "50g",
+          "price": 35,
+          "stock": 130
+        },
+        {
+          "weight": "100g",
+          "price": 65,
+          "originalPrice": 75,
+          "stock": 90
+        }
+      ],
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/PULIOGAREPOWDER6.jpg?v=1788171667",
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/PULIOGAREPOWDER50g2.jpg?v=1788171667"
+      ],
+      "createdAt": "2026-10-26T19:11:48.017Z"
+    },
+    {
+      "id": "prod-14",
+      "name": "Anjali Gutti Vankaya Kura Masala (Stuffed Brinjal)",
+      "slug": "anjali-gutti-vankaya-kura-masala",
+      "category": "Traditional South Indian Powders",
+      "tagline": "Authentic Telugu Heritage Paste Powder for Baby Brinjals & Stuffed Curries",
+      "description": "Gutti Vankaya is considered the crowned jewel of Telugu vegetarian feasts. This master blend of roasted peanuts, sesame seeds, coriander, cumin, dry coconut, and cloves is designed specifically to be stuffed into slit purple brinjals and braised in gravy.",
+      "origin": "Coastal Andhra Cuisine",
+      "originCountry": "India",
+      "heatLevel": 2,
+      "heatDescription": "Medium (Nutty, Roasted Coconut & Clove)",
+      "aromaNotes": [
+        "Roasted Peanuts",
+        "Dry Coconut Copra",
+        "Clove & Cinnamon",
+        "Coriander Seed"
+      ],
+      "culinaryUses": [
+        "Gutti Vankaya Kura (Stuffed Brinjal)",
+        "Stuffed Capsicum",
+        "Bagara Baingan",
+        "Paneer Stuffed Dum"
+      ],
+      "harvestYear": "2024 Fresh Crop",
+      "organic": true,
+      "singleOrigin": false,
+      "isFeatured": false,
+      "isBestseller": true,
+      "rating": 4.93,
+      "reviewCount": 175,
+      "stock": 80,
+      "variants": [
+        {
+          "weight": "50g",
+          "price": 50,
+          "stock": 80
+        },
+        {
+          "weight": "100g",
+          "price": 95,
+          "originalPrice": 110,
+          "stock": 55
+        }
+      ],
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/guttivankayakuramasala.jpg?v=1788169966",
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/guttivankayakuramasala50gback.jpg?v=1788169966"
+      ],
+      "createdAt": "2026-10-26T19:11:48.017Z"
+    },
+    {
+      "id": "prod-15",
+      "name": "Anjali Bisibele Bhath Masala",
+      "slug": "anjali-bisibele-bhath-masala",
+      "category": "Traditional South Indian Powders",
+      "tagline": "Authentic Karnataka Spice Blend with Marathi Moggu, Copra & Kapok Buds",
+      "description": "The authentic taste of Karnataka’s famous hot lentil-rice dish. Featuring rare aromatic Marathi Moggu (Kapok buds), true cinnamon, roasted coriander, desiccated copra, and chana dal. Imparts the signature rich dark color and irresistible fragrant aroma.",
+      "origin": "Mysore, Karnataka",
+      "originCountry": "India",
+      "heatLevel": 2,
+      "heatDescription": "Medium (Cinnamon & Kapok Bud Warmth)",
+      "aromaNotes": [
+        "Marathi Moggu Buds",
+        "Copra Coconut",
+        "Cinnamon Quills",
+        "Roasted Toor Dal"
+      ],
+      "culinaryUses": [
+        "Karnataka Bisi Bele Bath",
+        "Khara Pongal",
+        "Mixed Vegetable Dal Rice",
+        "Spiced Poha"
+      ],
+      "harvestYear": "2024 Fresh Blend",
+      "organic": true,
+      "singleOrigin": false,
+      "isFeatured": false,
+      "isBestseller": false,
+      "rating": 4.87,
+      "reviewCount": 140,
+      "stock": 95,
+      "variants": [
+        {
+          "weight": "50g",
+          "price": 50,
+          "stock": 95
+        },
+        {
+          "weight": "100g",
+          "price": 95,
+          "originalPrice": 110,
+          "stock": 65
+        }
+      ],
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/BisibeleBhathMasala.jpg?v=1788168620",
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/BisibeleBhathMasala2.jpg?v=1788168620"
+      ],
+      "createdAt": "2026-10-26T19:11:48.017Z"
+    },
+    {
+      "id": "prod-16",
+      "name": "Anjali Pav Bhaji Masala",
+      "slug": "anjali-pav-bhaji-masala",
+      "category": "Authentic Masala Powders",
+      "tagline": "Mumbai Street-Side Buttery Bhaji Seasoning with Amchur & Black Salt",
+      "description": "Brings Chowpatty street food magic straight to your kitchen! A zesty, pungent blend of dried green mango (amchur), black salt, roasted cumin, fennel seeds, and coriander. Mashes flawlessly into boiled potatoes, tomatoes, and butter for mouth-watering bhaji.",
+      "origin": "Mumbai Street Heritage",
+      "originCountry": "India",
+      "heatLevel": 2,
+      "heatDescription": "Medium (Tangy Amchur & Buttery Cumin)",
+      "aromaNotes": [
+        "Tangy Green Mango",
+        "Kala Namak",
+        "Roasted Saunf (Fennel)",
+        "Coriander"
+      ],
+      "culinaryUses": [
+        "Mumbai Pav Bhaji",
+        "Tawa Pulao",
+        "Veg Masala Toast",
+        "Cheese Bhaji Paratha"
+      ],
+      "harvestYear": "2024 Fresh Crop",
+      "organic": true,
+      "singleOrigin": false,
+      "isFeatured": false,
+      "isBestseller": true,
+      "rating": 4.9,
+      "reviewCount": 215,
+      "stock": 110,
+      "variants": [
+        {
+          "weight": "50g",
+          "price": 40,
+          "stock": 110
+        },
+        {
+          "weight": "100g",
+          "price": 75,
+          "originalPrice": 85,
+          "stock": 75
+        }
+      ],
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/pavbhajimasala50g.jpg?v=1788163409",
+        "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/pavbhajimasala50gBack.jpg?v=1788163409"
+      ],
+      "createdAt": "2026-10-26T19:11:48.017Z"
     }
   ],
   "orders": [
     {
       "id": "ord-1001",
-      "orderNumber": "ZAF-9281",
+      "orderNumber": "ANJ-8291",
       "userId": "usr-customer",
-      "customerName": "Elena Rostova",
-      "customerEmail": "user@spices.com",
-      "customerPhone": "+1 (555) 017-8392",
+      "customerName": "Priya Sundaram",
+      "customerEmail": "user@anjalispices.com",
+      "customerPhone": "+91 98200 45678",
       "items": [
         {
           "productId": "prod-1",
-          "name": "Royal Kashmiri Mongra Saffron",
-          "weight": "2g",
-          "price": 34,
-          "quantity": 1,
-          "image": "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          "productId": "prod-4",
-          "name": "Alleppey Super Bold Green Cardamom (8mm+)",
-          "weight": "100g",
-          "price": 29,
-          "quantity": 1,
-          "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80"
-        }
-      ],
-      "subtotal": 63,
-      "discount": 9.45,
-      "couponCode": "SPICE15",
-      "shippingFee": 0,
-      "shippingMethod": "Express Aroma-Lock Delivery",
-      "tax": 2.68,
-      "total": 56.23,
-      "shippingAddress": {
-        "id": "addr-cust-1",
-        "fullName": "Elena Rostova",
-        "phone": "+1 (555) 017-8392",
-        "addressLine1": "348 Culinary Crescent, Apt 4B",
-        "city": "Seattle",
-        "state": "WA",
-        "postalCode": "98101",
-        "country": "United States",
-        "isDefault": true
-      },
-      "paymentMethod": "CARD",
-      "paymentStatus": "PAID",
-      "orderStatus": "DELIVERED",
-      "carrier": "DHL Express Heritage",
-      "trackingNumber": "DHL-ZAF-992104",
-      "estimatedDelivery": "Delivered Yesterday",
-      "createdAt": "2026-10-21T18:38:07.517Z",
-      "updatedAt": "2026-10-25T18:38:07.517Z"
-    },
-    {
-      "id": "ord-1002",
-      "orderNumber": "ZAF-9340",
-      "userId": "usr-customer",
-      "customerName": "Elena Rostova",
-      "customerEmail": "user@spices.com",
-      "customerPhone": "+1 (555) 017-8392",
-      "items": [
-        {
-          "productId": "prod-6",
-          "name": "17-Spice Heirloom Royal Garam Masala",
-          "weight": "250g Pouch",
-          "price": 28,
+          "name": "Anjali Premium Chilli Powder",
+          "weight": "200g",
+          "price": 100,
           "quantity": 2,
-          "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80"
+          "image": "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/CHILLI_1.jpg?v=1702640021"
         },
         {
-          "productId": "prod-2",
-          "name": "Tellicherry Garbled Extra Bold Black Peppercorns",
-          "weight": "250g",
-          "price": 26,
+          "productId": "prod-5",
+          "name": "Anjali Premium Sambar Powder",
+          "weight": "200g",
+          "price": 115,
           "quantity": 1,
-          "image": "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=800&q=80"
+          "image": "https://cdn.shopify.com/s/files/1/0587/5410/5495/products/100gPremiumSambarFront_d90cf11c-6f66-42c5-8d23-6931bbe032fe.jpg?v=1666430990"
+        },
+        {
+          "productId": "prod-8",
+          "name": "Anjali Hyderabadi Chicken Biryani Masala",
+          "weight": "100g",
+          "price": 95,
+          "quantity": 2,
+          "image": "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/Hyderabadchickenbiryanimasalacopy.jpg?v=1788170152"
         }
       ],
-      "subtotal": 82,
-      "discount": 0,
+      "subtotal": 505,
+      "discount": 75.75,
+      "couponCode": "ANJALI15",
       "shippingFee": 0,
-      "shippingMethod": "Express Aroma-Lock Delivery",
-      "tax": 4.1,
-      "total": 86.1,
+      "shippingMethod": "Express Aroma-Lock (Free over ₹499)",
+      "tax": 21.46,
+      "total": 450.71,
       "shippingAddress": {
         "id": "addr-cust-1",
-        "fullName": "Elena Rostova",
-        "phone": "+1 (555) 017-8392",
-        "addressLine1": "348 Culinary Crescent, Apt 4B",
-        "city": "Seattle",
-        "state": "WA",
-        "postalCode": "98101",
-        "country": "United States",
+        "fullName": "Priya Sundaram",
+        "phone": "+91 98200 45678",
+        "addressLine1": "A-402, Kaveri Enclave, Indiranagar",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "postalCode": "560038",
+        "country": "India",
         "isDefault": true
       },
       "paymentMethod": "UPI",
       "paymentStatus": "PAID",
-      "orderStatus": "SHIPPED",
-      "carrier": "FedEx Priority Spices",
-      "trackingNumber": "FDX-77401920",
-      "estimatedDelivery": "Tomorrow by 4:00 PM",
-      "createdAt": "2026-10-25T18:38:07.517Z",
-      "updatedAt": "2026-10-26T18:38:07.517Z"
+      "orderStatus": "DELIVERED",
+      "carrier": "BlueDart Express",
+      "trackingNumber": "BLU-ANJ-789210",
+      "estimatedDelivery": "Delivered",
+      "createdAt": "2026-10-22T19:11:48.017Z",
+      "updatedAt": "2026-10-25T19:11:48.017Z"
     },
     {
-      "id": "ord-1003",
-      "orderNumber": "ZAF-9411",
+      "id": "ord-1002",
+      "orderNumber": "ANJ-8340",
       "userId": "usr-customer-2",
-      "customerName": "Devon Patel",
-      "customerEmail": "devon@example.com",
-      "customerPhone": "+1 (555) 012-7711",
+      "customerName": "Rajesh Kulkarni",
+      "customerEmail": "rajesh@example.com",
+      "customerPhone": "+91 97110 33445",
       "items": [
         {
-          "productId": "prod-7",
-          "name": "Golden Lakadong Turmeric (7.5%+ Curcumin)",
+          "productId": "prod-4",
+          "name": "Anjali Curry Chilli Powder (Kura Karam)",
           "weight": "250g",
-          "price": 23,
+          "price": 155,
           "quantity": 1,
-          "image": "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80"
+          "image": "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/KuraKaram100gfront.jpg?v=1788238300"
         },
         {
-          "productId": "prod-9",
-          "name": "Madagascar Bourbon Gourmet Vanilla Beans (Grade A)",
-          "weight": "5 Pods (approx 20g)",
-          "price": 31,
+          "productId": "prod-2",
+          "name": "Anjali Turmeric (Haldi) Powder",
+          "weight": "500g",
+          "price": 170,
           "quantity": 1,
-          "image": "https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=80"
+          "image": "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/TURMERIC_1.jpg?v=1702640061"
+        },
+        {
+          "productId": "prod-7",
+          "name": "Anjali Traditional Garam Masala Powder",
+          "weight": "100g",
+          "price": 80,
+          "quantity": 2,
+          "image": "https://cdn.shopify.com/s/files/1/0587/5410/5495/files/GARAMMASALA_1.jpg?v=1705735292"
         }
       ],
-      "subtotal": 54,
-      "discount": 10,
-      "couponCode": "FIRSTHARVEST",
-      "shippingFee": 0,
-      "shippingMethod": "Express Aroma-Lock Delivery",
-      "tax": 2.2,
-      "total": 46.2,
+      "subtotal": 485,
+      "discount": 0,
+      "shippingFee": 49,
+      "shippingMethod": "Standard Courier (3-5 Days)",
+      "tax": 26.7,
+      "total": 560.7,
       "shippingAddress": {
         "id": "addr-cust-2",
-        "fullName": "Devon Patel",
-        "phone": "+1 (555) 012-7711",
-        "addressLine1": "89 Masala Lane",
-        "city": "Chicago",
-        "state": "IL",
-        "postalCode": "60611",
-        "country": "United States",
+        "fullName": "Rajesh Kulkarni",
+        "phone": "+91 97110 33445",
+        "addressLine1": "Flat 12, Deccan Heights, Kothrud",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "postalCode": "411038",
+        "country": "India",
         "isDefault": true
       },
       "paymentMethod": "CARD",
       "paymentStatus": "PAID",
-      "orderStatus": "PROCESSING",
-      "carrier": "USPS Spice Priority",
-      "trackingNumber": "94001118992231",
-      "estimatedDelivery": "In 3 business days",
-      "createdAt": "2026-10-26T14:38:07.517Z",
-      "updatedAt": "2026-10-26T18:38:07.517Z"
+      "orderStatus": "SHIPPED",
+      "carrier": "Delhivery Surface",
+      "trackingNumber": "DLV-994012984",
+      "estimatedDelivery": "Tomorrow by 2:00 PM",
+      "createdAt": "2026-10-25T19:11:48.017Z",
+      "updatedAt": "2026-10-26T19:11:48.017Z"
     }
   ],
   "reviews": [
@@ -956,71 +1073,71 @@
       "id": "rev-1",
       "productId": "prod-1",
       "userId": "usr-customer",
-      "userName": "Elena Rostova",
+      "userName": "Priya Sundaram",
       "rating": 5,
-      "title": "Unbelievable aroma - true Mongra saffron!",
-      "comment": "Steeped just 6 threads in warm milk for 20 minutes and it turned the most brilliant rich gold liquor. The floral bittersweet aroma filled the whole kitchen. Completely unlike grocery store saffron.",
-      "heatPerception": "Zero heat, pure golden warmth",
+      "title": "Authentic Guntur Chilli heat - just like homemade!",
+      "comment": "The color and aroma are identical to the traditional fresh sun-dried chillies my grandmother used to powder. No synthetic redness, just pure rich flavor and great pungency in my rasam and sambar.",
+      "heatPerception": "Proper authentic Guntur heat",
       "isVerified": true,
       "isApproved": true,
-      "createdAt": "2026-10-23T18:38:07.517Z"
+      "createdAt": "2026-10-23T19:11:48.017Z"
     },
     {
       "id": "rev-2",
-      "productId": "prod-2",
+      "productId": "prod-4",
       "userId": "usr-customer-2",
-      "userName": "Chef Devon P.",
+      "userName": "Rajesh Kulkarni",
       "rating": 5,
-      "title": "The largest peppercorns I have ever seen",
-      "comment": "Crack them coarsely over prime ribeye or tossed in cacio e pepe. The bright citrus and cedar finish blows standard black pepper away.",
-      "heatPerception": "Zesty, deep piperine heat",
+      "title": "Kura Karam is magic for vegetable fry",
+      "comment": "Tossed this with potato fry and dondakaya (tindora) fry. The garlic, cumin, and chilli balance is perfection. We are hooked!",
+      "heatPerception": "Spicy with wonderful roasted garlic kick",
       "isVerified": true,
       "isApproved": true,
-      "createdAt": "2026-10-24T18:38:07.517Z"
+      "createdAt": "2026-10-24T19:11:48.017Z"
     },
     {
       "id": "rev-3",
-      "productId": "prod-6",
+      "productId": "prod-8",
       "userId": "usr-customer",
-      "userName": "Elena Rostova",
+      "userName": "Priya Sundaram",
       "rating": 5,
-      "title": "Heirloom Garam Masala is pure magic",
-      "comment": "You can actually smell the delicate mace and rose petals. It adds such a royal depth to roasted aubergines and chicken korma without being overly pungent.",
-      "heatPerception": "Perfect complex fragrant heat",
+      "title": "Hyderabadi Biryani turned out restaurant-style!",
+      "comment": "You can actually smell the shahi jeera, mace blades, and green cardamom. The whole house was filled with the fragrance of authentic dum biryani.",
+      "heatPerception": "Perfect aromatic spice",
       "isVerified": true,
       "isApproved": true,
-      "createdAt": "2026-10-25T18:38:07.517Z"
+      "createdAt": "2026-10-25T19:11:48.017Z"
     }
   ],
   "coupons": [
     {
       "id": "coup-1",
-      "code": "SPICE15",
+      "code": "ANJALI15",
       "type": "PERCENTAGE",
       "discountValue": 15,
-      "minOrderValue": 30,
+      "minOrderValue": 299,
       "isActive": true,
-      "usageCount": 42,
+      "usageCount": 88,
       "expiresAt": "2027-12-31T23:59:59.000Z"
     },
     {
       "id": "coup-2",
-      "code": "FIRSTHARVEST",
+      "code": "FIRSTORDER",
       "type": "FIXED",
-      "discountValue": 10,
-      "minOrderValue": 40,
+      "discountValue": 50,
+      "minOrderValue": 399,
       "isActive": true,
-      "usageCount": 19,
+      "usageCount": 34,
       "expiresAt": "2027-12-31T23:59:59.000Z"
     },
     {
       "id": "coup-3",
-      "code": "ROYAL20",
-      "type": "PERCENTAGE",
-      "discountValue": 20,
-      "minOrderValue": 75,
+      "code": "FREESHIP",
+      "type": "FIXED",
+      "discountValue": 49,
+      "minOrderValue": 349,
       "isActive": true,
-      "usageCount": 8,
+      "usageCount": 22,
       "expiresAt": "2027-12-31T23:59:59.000Z"
     }
   ],
@@ -1028,43 +1145,43 @@
     {
       "id": "log-1",
       "userId": "usr-superadmin",
-      "userName": "Victoria Vance",
+      "userName": "Anjali Sharma",
       "userRole": "SUPERADMIN",
       "action": "SYSTEM_INITIALIZATION",
-      "details": "Zaffran & Clove platform initialized with 12 single-origin spice listings and standard security permissions.",
+      "details": "Anjali Spices platform initialized with 16 authentic Indian spices & masala listings styled after Priya Foods.",
       "createdAt": "2024-01-01T00:00:00.000Z"
     },
     {
       "id": "log-2",
       "userId": "usr-admin",
-      "userName": "Marcus Sterling",
+      "userName": "Ramesh Verma",
       "userRole": "ADMIN",
       "action": "INVENTORY_RESTOCK",
-      "details": "Restocked Tellicherry Garbled Extra Bold Black Peppercorns (+120 units).",
-      "createdAt": "2026-10-24T18:38:07.517Z"
+      "details": "Restocked Anjali Premium Chilli Powder and Sambar Powder (+150 units).",
+      "createdAt": "2026-10-24T19:11:48.017Z"
     },
     {
       "id": "log-3",
       "userId": "usr-superadmin",
-      "userName": "Victoria Vance",
+      "userName": "Anjali Sharma",
       "userRole": "SUPERADMIN",
       "action": "ROLE_UPDATE",
-      "details": "Assigned Marcus Sterling the ADMIN role.",
-      "createdAt": "2026-10-16T18:38:07.517Z"
+      "details": "Assigned Ramesh Verma the ADMIN role.",
+      "createdAt": "2026-10-16T19:11:48.017Z"
     }
   ],
   "settings": {
-    "storeName": "Zaffran & Clove",
-    "tagline": "Artisanal Single-Origin Spices & Handcrafted Heritage Blends",
-    "currency": "USD",
-    "currencySymbol": "$",
+    "storeName": "Anjali Spices",
+    "tagline": "Authentic Indian Spices, Traditional Masalas & Pure Ground Powders",
+    "currency": "INR",
+    "currencySymbol": "₹",
     "taxRate": 5,
-    "freeShippingThreshold": 50,
-    "standardShippingFee": 4.99,
-    "expressShippingFee": 12.99,
-    "supportEmail": "concierge@zaffranandclove.com",
-    "supportPhone": "+1 (800) 555-SPICE",
-    "announcement": "🌿 Spring Harvest Has Landed: Enjoy 15% off with code SPICE15 | Free Express Aroma-Lock shipping over $50!",
+    "freeShippingThreshold": 499,
+    "standardShippingFee": 49,
+    "expressShippingFee": 99,
+    "supportEmail": "care@anjalispices.com",
+    "supportPhone": "+91 (040) 2335-SPICE",
+    "announcement": "🌿 Traditional Harvest Festival: Enjoy 15% off with code ANJALI15 | Free Express Shipping on orders over ₹499!",
     "showAnnouncement": true,
     "maintenanceMode": false
   }

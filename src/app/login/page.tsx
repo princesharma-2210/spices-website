@@ -51,7 +51,7 @@ export default function LoginPage() {
           Z
         </div>
         <h1 className="font-serif text-3xl font-bold text-stone-900">
-          Welcome to Zaffran & Clove
+          Welcome to Trade With Anjali
         </h1>
         <p className="text-xs text-stone-500">
           Sign in to your artisanal spices account

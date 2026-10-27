@@ -19,11 +19,11 @@ export async function POST(req: Request) {
     // If not found, use default demo emails
     if (!user) {
       if (targetRole === 'SUPERADMIN') {
-        user = db.users.find(u => u.email === 'superadmin@spices.com');
+        user = db.users.find(u => u.email === 'superadmin@anjalispices.com' || u.email === 'superadmin@spices.com');
       } else if (targetRole === 'ADMIN') {
-        user = db.users.find(u => u.email === 'admin@spices.com');
+        user = db.users.find(u => u.email === 'admin@anjalispices.com' || u.email === 'admin@spices.com');
       } else {
-        user = db.users.find(u => u.email === 'user@spices.com');
+        user = db.users.find(u => u.email === 'user@anjalispices.com' || u.email === 'user@spices.com');
       }
     }
 

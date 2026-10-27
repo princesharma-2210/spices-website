@@ -45,7 +45,7 @@ export function Navbar() {
       <div className="bg-spice-900 text-stone-200 text-[11px] py-1.5 px-4 text-center font-medium tracking-wide">
         <span className="inline-flex items-center gap-1.5">
           <Sparkles className="w-3.5 h-3.5 text-saffron-400" />
-          <span>Spring Harvest Arrivals: Enjoy 15% off with code <strong>SPICE15</strong> | Free Shipping over $50</span>
+          <span>Authentic Indian Heritage Spices: Enjoy 15% off with code <strong>ANJALI15</strong> | Free Shipping over ₹499</span>
         </span>
       </div>
 
@@ -61,36 +61,39 @@ export function Navbar() {
 
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-spice-900 to-spice-700 flex items-center justify-center text-saffron-300 shadow-md">
-              <span className="font-serif font-black text-xl">Z</span>
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-spice-900 to-paprika-700 flex items-center justify-center text-saffron-300 shadow-md">
+              <span className="font-serif font-black text-xl">A</span>
             </div>
             <div>
               <span className="font-serif font-bold text-xl sm:text-2xl tracking-tight text-stone-900 block leading-tight">
-                Zaffran & Clove
+                Anjali Spices
               </span>
               <span className="text-[10px] uppercase tracking-widest text-spice-700 font-semibold block -mt-1">
-                Pure Single-Origin Spices
+                Authentic Indian Masalas & Pure Powders
               </span>
             </div>
           </Link>
 
           {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center gap-7 text-sm font-medium text-stone-700">
+          <div className="hidden lg:flex items-center gap-6 text-sm font-medium text-stone-700">
             <Link href="/products" className="hover:text-spice-800 transition-colors">
               All Spices
             </Link>
-            <Link href="/products?category=Whole+Spices" className="hover:text-spice-800 transition-colors">
-              Whole Spices
+            <Link href="/products?category=Spices+%26+Pure+Powders" className="hover:text-spice-800 transition-colors">
+              Pure Spices
             </Link>
-            <Link href="/products?category=Ground+Spices" className="hover:text-spice-800 transition-colors">
-              Stone Ground
+            <Link href="/products?category=Authentic+Masala+Powders" className="hover:text-spice-800 transition-colors">
+              Authentic Masalas
             </Link>
-            <Link href="/products?category=Blends+%26+Masalas" className="hover:text-spice-800 transition-colors">
-              Heritage Blends
+            <Link href="/products?category=Regional+Biryani+%26+Curry+Blends" className="hover:text-spice-800 transition-colors">
+              Biryani Blends
             </Link>
-            <Link href="/products?sort=heat-desc" className="hover:text-spice-800 transition-colors flex items-center gap-1 text-red-700">
+            <Link href="/products?category=Traditional+South+Indian+Powders" className="hover:text-spice-800 transition-colors">
+              Traditional Powders
+            </Link>
+            <Link href="/products?sort=heat-desc" className="hover:text-spice-800 transition-colors flex items-center gap-1 text-red-700 font-semibold">
               <Flame className="w-4 h-4 text-red-500 fill-red-500" />
-              Heat Explorer
+              Heat Index
             </Link>
           </div>
 
@@ -263,25 +266,32 @@ export function Navbar() {
               All Spices Collection
             </Link>
             <Link
-              href="/products?category=Whole+Spices"
+              href="/products?category=Spices+%26+Pure+Powders"
               onClick={() => setMobileMenuOpen(false)}
               className="text-sm font-medium text-stone-800 py-1"
             >
-              Whole Spices
+              Pure Spices (Chilli, Turmeric, Dhania)
             </Link>
             <Link
-              href="/products?category=Ground+Spices"
+              href="/products?category=Authentic+Masala+Powders"
               onClick={() => setMobileMenuOpen(false)}
               className="text-sm font-medium text-stone-800 py-1"
             >
-              Stone Ground Powders
+              Authentic Masalas (Sambar, Rasam, Garam Masala)
             </Link>
             <Link
-              href="/products?category=Blends+%26+Masalas"
+              href="/products?category=Regional+Biryani+%26+Curry+Blends"
               onClick={() => setMobileMenuOpen(false)}
               className="text-sm font-medium text-stone-800 py-1"
             >
-              Heritage Blends
+              Biryani & Curry Masalas
+            </Link>
+            <Link
+              href="/products?category=Traditional+South+Indian+Powders"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-sm font-medium text-stone-800 py-1"
+            >
+              Traditional Powders (Puliogare, Vankaya)
             </Link>
             <Link
               href="/products?sort=heat-desc"
