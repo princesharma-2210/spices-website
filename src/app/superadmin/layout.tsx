@@ -66,7 +66,7 @@ export default function SuperadminLayout({ children }: { children: React.ReactNo
       <AdminSidebar />
 
       {/* Main Content Viewport */}
-      <div className="flex-1 overflow-x-hidden p-6 sm:p-10">
+      <div className="flex-1 overflow-x-hidden p-4 sm:p-6 lg:p-10 pt-16 lg:pt-10">
         <div className="max-w-7xl mx-auto">
           {children}
         </div>
